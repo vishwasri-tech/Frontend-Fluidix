@@ -23,6 +23,7 @@ import Specifications2 from "./Components/Specifications2";
 import Specification5 from "./Components/Specifications5";
 import Specification4 from "./Components/Specifications4";
 import Specification3 from "./Components/Specifications3";
+import DynamicWaterProduct from "./Components/DynamicWaterProduct";
 // Import other specification components as needed  
 
 // Individual Product Pages
@@ -99,6 +100,15 @@ function App() {
                 <HowItWorks/>
                 <Form/>
                 
+              </>
+            }
+          />
+
+          <Route
+            path ="plans"
+            element={
+              <>
+                <DynamicWaterProduct/>
               </>
             }
           />

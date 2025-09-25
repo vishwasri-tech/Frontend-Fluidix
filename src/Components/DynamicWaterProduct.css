@@ -1,0 +1,276 @@
+/* -------------------------
+   Variables & base reset
+   ------------------------- */
+:root{
+  --primary: #2b77ff;
+  --muted: #6c6f86;
+  --card-bg: #fff;
+  --shadow: 0 14px 30px rgba(44,60,100,0.06);
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+}
+
+/* Root */
+.dwp-root {
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 16px auto;
+  padding: 12px 16px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #26314a;
+}
+
+/* Tabs */
+.dwp-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.dwp-tab {
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  border: 1px solid #d7dbe5;
+  background: var(--card-bg);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s;
+}
+.dwp-tab--active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 8px 18px rgba(43,119,255,0.14);
+}
+
+/* Main layout */
+.dwp-main {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* left flexible, right fixed */
+  gap: 12px; /* small gap between image and card */
+  align-items: stretch; /* stretch left and right to equal height */
+  justify-content: end; /* push right card towards right */
+  padding-right: 16px; /* spacing from container edge */
+}
+
+/* Left image area */
+.dwp-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dwp-image-area {
+  width: 100%;
+  height: 100%; /* full height of left container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.dwp-image {
+  height: 110%;       /* reduced height for smaller image */
+  max-height: 300px; /* max height limit */
+  width: auto;       /* maintain aspect ratio */
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+  -webkit-filter: none !important;
+  z-index: 2;
+  display: block;
+}
+
+/* Removed decorative floor under image */
+.dwp-floor {
+  display: none !important;
+}
+
+/* Right card */
+.dwp-right {
+  margin-right: 8px; /* space from container edge */
+}
+.dwp-right .dwp-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  border: 1px solid #e7ebf3;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* topbar area */
+.dwp-card-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f9;
+  padding: 10px 14px;
+}
+.dwp-card-top-left { display: flex; align-items: center; gap: 8px; }
+.dwp-title {
+  color: #24346e;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.05;
+}
+.dwp-card-top-right {
+  text-align: right;
+  padding-left: 8px;
+}
+.dwp-starting {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.dwp-start-price {
+  font-weight: 800;
+  font-size: 15px;
+  color: #1f2f8a;
+}
+.dwp-start-unit {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+/* Body */
+.dwp-card-body {
+  padding: 14px;
+  flex: 1; /* ensures card height stretches image container */
+}
+.dwp-choose {
+  margin: 0 0 10px 0;
+  color: #2b3270;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Plans */
+.dwp-plans {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dwp-plan {
+  flex: 1 1 48%;
+  min-width: 140px;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ebeff8;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s;
+}
+.dwp-plan:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(23,50,140,0.06); }
+
+/* selected plan */
+.dwp-plan--selected {
+  background: #3a2f8f;
+  color: #fff;
+  border-color: rgba(0,0,0,0.04);
+  box-shadow: 0 18px 36px rgba(58,47,143,0.16);
+}
+.dwp-plan-months { font-weight: 800; font-size: 13px; }
+.dwp-plan-price { font-size: 18px; font-weight: 800; margin-top: 8px; color: inherit; }
+.dwp-per { font-size: 12px; margin-left: 6px; font-weight: 600; opacity: .95; color: inherit; }
+
+/* save pill */
+.dwp-plan-save {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  background: #12b24a;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Subscribe row */
+.dwp-sub-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+  justify-content: space-between;
+}
+.dwp-prices { min-width: 140px; color: #6b7280; text-align: left; }
+
+/* old crossed price */
+.dwp-old {
+  text-decoration: line-through;
+  color: #6f87b7;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* total */
+.dwp-total {
+  font-weight: 900;
+  color: #1641d9;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+/* Subscribe CTA */
+.dwp-cta {
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(43,119,255,0.06);
+}
+.dwp-cta:hover { background: rgba(43,119,255,0.06); }
+
+/* Benefits */
+.dwp-benefits {
+  margin-top: 18px;
+  text-align: left;
+}
+.dwp-benefits h2 { margin-bottom: 8px; color: #24346e; font-size: 18px; }
+.dwp-benefits p { color: #475569; line-height: 1.6; }
+.dwp-bestfor { margin-top: 8px; font-weight: 600; color: #28324a; }
+
+/* -------------------------
+   Responsive breakpoints
+   ------------------------- */
+
+/* medium screens (tablet) */
+@media (max-width: 980px) {
+  .dwp-main { grid-template-columns: 1fr 340px; gap: 10px; justify-content: end; }
+  .dwp-image { max-height: 250px; height: 65%; }
+  .dwp-plan { flex: 1 1 48%; }
+}
+
+/* small screens: stack layout */
+@media (max-width: 880px) {
+  .dwp-main { grid-template-columns: 1fr; gap: 8px; justify-content: center; }
+  .dwp-image-area { height: auto; padding: 4px 0 8px; }
+  .dwp-image { height: auto; max-height: 180px; width: 100%; }
+  .dwp-card-topbar { padding: 10px 12px; }
+  .dwp-card-body { padding: 12px; }
+  .dwp-plans { gap: 8px; }
+  .dwp-plan { flex: 1 1 48%; min-width: 48%; padding: 10px; }
+  .dwp-sub-row { margin-top: 12px; }
+}
+
+/* extra small phones */
+@media (max-width: 520px) {
+  .dwp-tabs { gap: 6px; margin-bottom: 10px; }
+  .dwp-plan { flex: 1 1 100%; min-width: 100%; }
+  .dwp-plans { flex-direction: column; }
+  .dwp-sub-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .dwp-prices { min-width: 0; }
+  .dwp-cta { width: 100%; margin-left: 0; }
+  .dwp-start-price { font-size: 14px; }
+  .dwp-title { font-size: 15px; }
+  .dwp-image { max-height: 140px; height: auto; width: 100%; }
+  .dwp-floor { display: none; }
+}
