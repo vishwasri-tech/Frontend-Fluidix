@@ -1,0 +1,216 @@
+.specification {
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* Container */
+.spec-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6rem;
+  flex-wrap: wrap;
+  padding: 2rem 5%;
+}
+
+/* Desktop only → shift container to right */
+@media (min-width: 1025px) {
+  .spec-container {
+    margin-left: 10%;
+    margin-right: auto;
+  }
+}
+
+/* Left Section */
+.spec-left h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #08007c;
+  text-align: left;
+}
+
+.spec-subtitle {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.spec-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spec-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.spec-table td:first-child {
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+/* Right Section */
+.spec-right h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #08007c;
+  text-align: left;
+}
+
+.workflow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: #f0f4ff;
+  padding: 8px;
+  object-fit: contain;
+}
+
+.step-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #08007c;
+}
+
+/* Arrow between steps */
+.workflow-arrow {
+  font-size: 20px;
+  color: #1e2a78;
+  margin: -5px 0 10px 25px;
+}
+
+/* Subscription Banner */
+.subscribe-banner {
+  background: #1e2a78;
+  color: white;
+  margin-top: 2rem;
+  border-radius: 12px;
+
+  display: flex;               /* side by side layout */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 10px;
+    margin-right: 10px;
+
+  padding: 2rem 3rem;
+  margin-bottom:50px ;
+}
+
+.subscribe-banner p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;                     /* take available space */
+  text-align: left;
+}
+
+.subscribe-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;              /* keep button size */
+}
+
+.subscribe-btn:hover {
+  background: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .spec-container {
+    margin-left: 0;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .spec-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .workflow-step {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .step-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Banner stacked on tablet/mobile */
+  .subscribe-banner {
+    flex-direction: column;
+    align-items: flex-start;   /* keep text left aligned */
+    text-align: left;
+    padding: 1.5rem 2rem;
+  }
+
+  .subscribe-banner p {
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .subscribe-btn {
+    align-self: flex-start;    /* button aligns left under text */
+  }
+}
+
+@media (max-width: 480px) {
+  .spec-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .step-text {
+    font-size: 13px;
+  }
+
+  .step-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .workflow-arrow {
+    margin-left: 15px;
+  }
+
+  .subscribe-banner {
+    padding: 1.2rem;
+  }
+
+  .subscribe-banner p {
+    font-size: 14px;
+  }
+
+  .subscribe-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
