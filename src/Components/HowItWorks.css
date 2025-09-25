@@ -1,0 +1,79 @@
+.how-it-works {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #08007C;
+}
+
+.steps-container3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.step-group3 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px;
+  white-space: nowrap;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.step-title3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.arrow3 {
+  font-size: 3rem;       /* makes the arrow bigger */
+    font-weight: normal;
+    color: #a49fe9;
+    position: relative;
+    top: -25px;            /* vertical alignment */
+    display: inline-block;
+    width: 20px;           /* increase width */
+    text-align: center;    /* center the arrow inside width */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .steps-container3 {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .step-group3 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .arrow3 {
+    transform: rotate(90deg);
+    font-size: 20px;
+  }
+
+  .step {
+    min-width: auto;
+  }
+}

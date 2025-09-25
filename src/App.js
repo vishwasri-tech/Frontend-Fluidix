@@ -14,6 +14,9 @@ import Reason from "./Components/Reason";
 import Bio from "./Components/Bio"; 
 import Enquire from "./Components/Enquire";      
 import WaterComposition from "./Components/Watercomposition";
+import Custom from "./Components/Custom";
+import HowItWorks from "./Components/HowItWorks";
+import Form from "./Components/Form";
 
 // Individual Product Pages
 import Product50 from "./Components/Product50";
@@ -76,6 +79,18 @@ function App() {
                 <About />
                 <Mission />
                 <Vision />
+              </>
+            }
+          />
+
+          <Route
+            path="/custom"
+            element={
+              <>
+                <Custom/>
+                <HowItWorks/>
+                <Form/>
+                
               </>
             }
           />

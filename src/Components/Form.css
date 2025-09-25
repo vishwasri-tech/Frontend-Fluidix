@@ -1,0 +1,168 @@
+/* Wrapper */
+.ro-form-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  background-color: #f8f9fb;
+}
+
+/* Main container */
+.ro-form-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left info box */
+.ro-info-box {
+  flex: 1 1 300px;
+  background-color: #2563eb;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  max-width: 350px;
+  width: 100%;
+}
+
+.ro-info-box h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.ro-info-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Right form */
+.ro-form-card {
+  flex: 1 1 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  width: 100%;
+}
+
+.ro-form-card h3 {
+  margin-bottom: 20px;
+  color: #08007C;
+}
+
+.ro-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.ro-form input,
+.ro-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.ro-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #4f46e5, #6FB2FF);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ro-form button:hover {
+  background: #1e3a8a;
+}
+
+/* Footer CTA */
+.ro-footer-cta {
+  margin-top: 60px;
+  background-color: #08007C;
+  color: white;
+  padding: 25px 20px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.ro-footer-cta p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ro-footer-cta button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Responsive for medium screens (tablets) */
+@media (max-width: 1024px) {
+  .ro-form-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .ro-info-box,
+  .ro-form-card {
+    max-width: 100%;
+  }
+}
+
+/* Ensure form takes full width on mobile */
+@media (max-width: 600px) {
+  .ro-form-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .ro-info-box {
+    width: 100%;
+    max-width: none;
+    padding: 20px 15px;
+    flex-grow: 0; /* Prevent height expansion */
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+
+  .ro-form-card {
+    width: 100%;
+    max-width: none;
+    padding: 20px 15px;
+    flex-grow: 1; /* Allow form to expand */
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+}
