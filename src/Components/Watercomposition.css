@@ -1,0 +1,57 @@
+/* ===== Water Composition Section ===== */
+.composition-section {
+  padding: 40px 20px;
+  background: #f9fafb;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image wrapper */
+.composition-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Main image styling */
+.composition-image-wrapper img {
+  max-width: 70%;   /* desktop size */
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+  .composition-image-wrapper img {
+    max-width: 80%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .composition-section {
+    padding: 30px 15px;
+  }
+
+  .composition-image-wrapper img {
+    max-width: 90%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .composition-section {
+    padding: 20px 10px;
+  }
+
+  .composition-image-wrapper img {
+    max-width: 95%;
+  }
+}

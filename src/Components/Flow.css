@@ -1,0 +1,74 @@
+.flow-section {
+  text-align: center;
+  padding: 2rem 1rem; /* reduce top/bottom padding */
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.flow-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1b4b;
+  margin: 0 0 0.5rem 0; /* remove default top margin */
+}
+
+.flow-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin: 0 0 2rem 0; /* reduce bottom margin */
+}
+
+/* container */
+.flow-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* responsive */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.flow-step {
+  text-align: center;
+  min-width: 160px;
+}
+
+.step-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.step-title {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+}
+
+/* arrow style */
+  .arrow {
+    font-size: 3rem;       /* makes the arrow bigger */
+    font-weight: normal;
+    color: #a49fe9;
+    position: relative;
+    top: -25px;            /* vertical alignment */
+    display: inline-block;
+    width: 20px;           /* increase width */
+    text-align: center;    /* center the arrow inside width */
+
+
+  }
+/* responsive: stack steps vertically and hide arrows */
+@media (max-width: 767px) {
+  .flow-steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+}

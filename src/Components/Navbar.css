@@ -1,0 +1,137 @@
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  height: 70px;
+  width: 150px;
+}
+
+.logo-img {
+ 
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 70px;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #555;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+.nav-links .active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+
+.enquire-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6FB2FF;
+  color:white !important;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.enquire-btn:hover {
+  background-color: #559de6; /* slightly darker hover */
+}
+
+.enquire-btn.active {
+  background-color: #4689cc; /* active state */
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+/* Toggle Animation */
+.hamburger.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.toggle .line2 {
+  opacity: 0;
+}
+.hamburger.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: #ffffff;
+    flex-direction: column;
+    width: 220px;
+    padding: 15px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

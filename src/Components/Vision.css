@@ -1,0 +1,164 @@
+/* Section Wrapper */
+.vision-why {
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Vision Section */
+.vision-section {
+  background: url("../assets/vision.png") no-repeat center center/cover;
+  color: #fff;
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.vision-text {
+  max-width: 600px;
+}
+
+.vision-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: -10px;
+  color: #2f2d85;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+.vision-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color:  #08007C;
+;
+  /* background: rgba(255, 255, 255, 0.7); */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Why Choose Section */
+.why-section {
+  padding: 60px 10%;
+  /* background: #fff; */
+  text-align: left;
+}
+
+.why-section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #08007c;
+  margin-bottom: 20px;
+}
+
+.why-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color:#08007C;
+;
+  margin-bottom: 30px;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+}
+
+.why-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #08007C;
+
+}
+
+.why-list img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+/* CTA Section */
+.cta-section1 {
+  background: url("../assets/cta.png") no-repeat center center/cover;
+  color: #fff;
+  padding: 50px 10%;
+  display: flex;                /* enable flex */
+  align-items: center;          /* vertical alignment */
+  justify-content: space-between; /* text left, button right */
+}
+
+.cta-section1 p {
+  font-size: 18px;
+  margin: 0;                    /* remove bottom margin for flex alignment */
+  font-weight: 500;
+  text-align: left;             /* force text left */
+}
+
+.cta-btn1 {
+  background: #6FB2FF;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;               /* prevents button from shrinking */
+}
+
+.cta-btn1:hover {
+  background: #1e1b6f;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .vision-section {
+    text-align: center;
+    justify-content: center;
+    padding: 60px 5%;
+  }
+
+  .vision-text {
+    max-width: 100%;
+  }
+
+  .why-section {
+    padding: 40px 5%;
+  }
+
+  .cta-section1 {
+    padding: 40px 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .vision-text h2 {
+    font-size: 24px;
+  }
+
+  .why-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section1 p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .cta-section1 {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .cta-section1 p {
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,149 @@
+.product-hero-section {
+  width: 100%;
+  min-height: 78vh;
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Background Slide */
+.product-background {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10%;
+  box-sizing: border-box;
+  pointer-events: none; /* Fix: prevent clicks on inactive slides */
+}
+
+.product-background.active {
+  opacity: 1;
+  z-index: 0;
+  pointer-events: auto; /* Active slide clickable */
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Text Overlay */
+.hero-text-overlay {
+  position: relative;
+  text-align: left;
+  color: #fff;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.hero-text-overlay h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero-text-overlay p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.know-more-btn {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #003399;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.know-more-btn:hover {
+  background: #002277;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #003399;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .product-background {
+    padding-right: 5%;
+  }
+  .hero-text-overlay h1 {
+    font-size: 32px;
+  }
+  .hero-text-overlay p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-background {
+    justify-content: center;
+    padding-right: 0;
+  }
+  .hero-text-overlay {
+    text-align: center;
+  }
+  .hero-text-overlay h1 {
+    font-size: 28px;
+  }
+  .hero-text-overlay p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text-overlay h1 {
+    font-size: 24px;
+  }
+  .hero-text-overlay p {
+    font-size: 13px;
+  }
+  .know-more-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}

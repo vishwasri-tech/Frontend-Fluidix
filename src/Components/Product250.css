@@ -1,0 +1,130 @@
+/* Container styling */
+.product250-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px; /* reduced gap to move right content closer */
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Left side - Image */
+.product250-left {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product250-image {
+  max-width: 85%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Right side - Content */
+.product250-right {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* default gap */
+  align-items: flex-start;
+  text-align: left;
+  margin-left: -10px; /* closer to image */
+  margin-top: 10px;   /* slight downward shift */
+}
+
+/* Title & Subtitle */
+.product250-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.product250-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+.product250-blue-text {
+  color: #0046ff;
+}
+
+/* Price */
+.product250-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Subscribe Button */
+.product250-subscribe-btn {
+  background: linear-gradient(to right, #5e5eff, #007bff);
+  color: #fff;
+  padding: 10px 20px;
+  width: 180px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 255, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease;
+  align-self: flex-start;
+}
+
+.product250-subscribe-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #007bff, #5e5eff);
+}
+
+/* Benefits Section */
+.product250-benefits {
+  margin-top: 10px;
+}
+
+.product250-benefits-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.product250-benefits-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.product250-bestfor {
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .product250-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 16px;
+  }
+
+  .product250-right {
+    flex: 1 1 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 0;
+    gap: 12px; /* decreased gap between text elements on mobile */
+  }
+
+  .product250-subscribe-btn {
+    width: 180px;
+  }
+}

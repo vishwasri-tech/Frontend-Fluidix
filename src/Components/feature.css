@@ -1,0 +1,219 @@
+/* =====================
+   Features Section
+===================== */
+.features-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #fff;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+.features-section h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #08007c;
+}
+
+.features-section p.subtitle {
+  font-size: 18px;
+  font-weight: 600;   
+  color: #08007c;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9ff;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  background: #e6e9ff;
+  transform: translateY(-5px);
+}
+
+/* Updated for image instead of icon */
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #fff;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #fff;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #fff;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #fff;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #fff;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+.feature-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;       /* keeps neat rounded edges */
+  border: 2px solid #08007c; /* blue border */
+  padding: 5px;              /* spacing inside the border */
+  background: #4548B9;          /* ensures PNGs look clean */
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.feature-img:hover {
+  border-color: #65b2ff;     /* lighter blue on hover */
+}
+
+
+.feature-text {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.feature-text a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.feature-text a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   CTA Section
+===================== */
+.cta-section {
+  background: #08007c;
+  color: #fff;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 2rem 5rem;
+  margin-top: 3rem;
+  border-radius: 12px; /* optional: makes section cleaner */
+}
+
+.cta-section h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #65b2ff;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: #e6e9ff;
+  color: #08007c;
+  transform: scale(1.05);
+}
+
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* stack features on small screens */
+  }
+
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .cta-button {
+    align-self: center;
+  }
+}

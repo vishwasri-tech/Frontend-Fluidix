@@ -1,0 +1,165 @@
+/* Container */
+.plan2-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #9c27b0, #2196f3);
+  font-family: 'Arial', sans-serif;
+}
+
+.plan2-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 50px;
+}
+
+/* Wrapper */
+.plan2-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Card Base */
+.plan2-card {
+  background: white;
+  border-radius: 18px;
+  padding: 40px 25px;
+  width: 280px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan2-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Headings & Duration */
+.plan2-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.plan2-duration {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+/* Features */
+.plan2-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.plan2-features li {
+  margin: 10px 0;
+  font-size: 14px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 2.5; 
+}
+
+.plan2-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* Buttons */
+.plan2-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.plan2-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Basic Plan Button (clickable, light color) */
+.basic-btn {
+  background: #e0e0e0; /* light gray */
+  color: #333;          /* dark text */
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.basic-btn:hover {
+  background: #d5d5d5; /* slightly darker on hover */
+}
+
+/* Premium Plan */
+.premium {
+  background: #2563eb;
+  color: white;
+}
+
+.premium .plan2-features li::before {
+  color: white;
+}
+
+.premium-btn {
+  background: white;
+  color: #2563eb;
+}
+
+.premium-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Highlight Premium */
+.highlight {
+  z-index: 2;
+  border: 3px solid #0d47a1;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+}
+
+/* Badge */
+.plan2-badge {
+  background: #0d47a1;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 15px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .plan2-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight {
+    transform: translateY(0);
+    width: 300px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .plan2-badge {
+    top: -10px;
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
