@@ -12,7 +12,7 @@ function Feature() {
   return (
     <section className="features-section">
       <h2>Why Fluidix?</h2>
-      <p className="subtitle">
+      <p className="subtitle7">
         Pure Water, Trusted Technology, And Exceptional Service <br />
         Designed For Your Health And Convenience.
       </p>

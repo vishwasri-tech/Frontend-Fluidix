@@ -1,222 +1,167 @@
-/* ✅ Reset */
-*,
-*::before,
-*::after {
+.banner {
+  width: 100%;
+  background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
+  padding: 3rem 1.5rem 5rem;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  height: 80vh; /* desktop fixed */
+  position: relative;
 }
 
-/* ✅ Global */
-body {
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  /* background: linear-gradient(to right, #dbeafe, #bfdbfe); */
-}
-
-/* Wrapper */
-.main-wrapper {
- height: 80vh; /* Full height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Hero Section */
-.hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  width: 100%;
-}
-
-/* Subscription Card */
-.subscription-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 1400px;
-  width: 100%;
-  gap: 40px;
-  padding: 20px;
+/* Top section layout */
+.banner-container {
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Left Image */
-.subscription-image {
-  flex: 1 1 300px;
+.banner-left {
+  flex: 1;
   display: flex;
   justify-content: center;
-  max-width: 600px;
+  margin-bottom: 2rem;
 }
 
-.subscription-image img {
+.machine-img {
+  width: 500px;
   max-width: 100%;
-  height: auto;
+  height: 500px;
   object-fit: contain;
 }
 
 /* Right Content */
-.subscription-content {
-  flex: 1 1 300px;
-  max-width: 600px;
+.banner-right {
+  flex: 1;
   text-align: left;
+  margin-top: -80px;
 }
 
-.subscription-content h1 {
-  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
-  font-weight: 800;
-  color: #08007C;
-  margin-bottom: 16px;
-  line-height: 1.3;
+.banner-right h2 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.subscription-content .subtitle {
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  margin: 12px 0 24px;
-  color: #334155;
-}
-
-.subscription-content .price {
-  font-size: clamp(0.95rem, 1vw, 1.1rem);
-  margin-bottom: 20px;
-  color: #1e293b;
-}
-
-.subscription-content .price span {
-  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
-  font-weight: bold;
-  color: #1d4ed8;
-}
-
-/* Subscribe Button */
-.subscribe-btn {
-  background-color: #fff;
-  color: #1d4ed8;
-  border: none;
-  padding: 14px 36px;
+.subtitle {
+  margin-top: 0.5rem;
   font-size: 1rem;
-  border-radius: 30px;
-  font-weight: bold;
+  color: #08007C;
+}
+
+.plan-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #08007C;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.subscribe-btn {
+  margin-top: 1.5rem;
+  background: #FFFFFF !important;
+  color: #08007C !important;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s ease;
-  display: inline-block;
-  width: 100%;
-  max-width: 250px;
-  text-align: center;
+  transition: background 0.3s ease;
 }
 
 .subscribe-btn:hover {
-  background-color: #c5c7cb;
+  background: #1e40af;
 }
 
-/* Specs Section (White Box) */
-.specs-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+/* Bottom Feature Bar */
+.feature-bar {
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px 40px;
-  margin: 40px auto;
-  gap: 30px;
-  width: 100%;
-  max-width: 1000px; /* Default smaller container */
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: -50px auto 0; /* sit at edge of blue background */
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* clean grid */
+  gap: 1.5rem;
+  position: relative;
+  z-index: 5;
 }
 
-.spec-item {
+.feature {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 140px;
-  flex: 1 1 200px;
-}
-
-.spec-item img {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.spec-item p {
-  font-size: 16px;
+  font-size: 1rem;
+  color: #333;
   font-weight: 500;
-  color: #1e293b;
+  justify-content: flex-start; /* align all icons/text from same starting point */
 }
 
-/* ✅ Responsive Media Queries */
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
 
-/* Tablets */
+/* Responsive - Tablets */
 @media (max-width: 1024px) {
-  .subscription-card {
+  .banner {
+    height: auto; /* let banner grow with content */
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  .banner-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .subscription-content {
+  .banner-right {
     text-align: center;
+    margin-top: 0; /* remove overlap */
   }
 
-  .specs-container {
-    max-width: 800px;
-    padding: 25px 30px;
-  }
-}
-
-/* Small Tablets / Large Mobiles */
-@media (max-width: 768px) {
   .subscribe-btn {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 12px 24px;
+    align-self: center;
   }
 
-  .specs-container {
-    max-width: 600px;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .spec-item {
-    justify-content: center;
-  }
-
-  .spec-item img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .spec-item p {
-    font-size: 15px;
+  .feature-bar {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    padding: 2rem;
+    margin-top: -40px; /* keep touching banner */
   }
 }
 
-/* Mobiles */
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 20px 10px;
+/* Responsive - Mobiles */
+@media (max-width: 600px) {
+  .banner {
+    height: auto; /* auto adjusts to content */
+    padding: 2rem 1rem 3.5rem;
   }
 
-  .subscription-content h1 {
-    font-size: 1.4rem;
+  .machine-img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
   }
 
-  .subscription-content .subtitle {
-    font-size: 0.9rem;
+  .banner-right h2 {
+    font-size: 1.5rem;
   }
 
-  .subscription-content .price {
-    font-size: 0.9rem;
-  }
-
-  .subscription-content .price span {
-    font-size: 1rem;
+  .price {
+    font-size: 1.5rem;
   }
 
   .subscribe-btn {
@@ -224,19 +169,25 @@ body {
     padding: 10px 20px;
   }
 
-  .specs-container {
-    max-width: 95%;
-    padding: 15px;
-    gap: 15px;
+  .feature-bar {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1.5rem;
+    margin-top: 30px;
   }
 
-  .spec-item img {
-    width: 28px;
-    height: 28px;
-    
+  .feature {
+    font-size: 0.9rem;
   }
 
-  .spec-item p {
-    font-size: 14px;
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media (min-width: 768px) and (max-width:1024px) {
+  .feature-bar {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1.5rem;
+    margin-top: 30px;
   }
 }

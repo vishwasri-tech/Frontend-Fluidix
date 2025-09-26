@@ -87,11 +87,20 @@
   color: #000;
 }
 
+
 /* Arrow style */
 .arrow-vertical {
   font-size: 2rem;
   color: #a49fe9;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0;}
+
+.workflow-arrow {
+  font-size: 20px;
+  color: #1e2a78;
+  align-self: center; 
+  /* margin: 0.5rem 0; */
+  margin-right: 450px !important; 
+
 }
 
 /* CTA Banner */
@@ -100,7 +109,10 @@
   color: white;
   margin-top: 2rem;
   border-radius: 12px;
-  display: flex;
+
+
+  display: flex;             
+
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
