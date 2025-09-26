@@ -71,19 +71,19 @@ function Specification() {
               <img src={step1} alt="Choose Product" className="step-icon" />
               <div className="step-text">Choose Your Product</div>
             </div>
-            <div className="workflow-arrow">↓</div>
+            {/* <div className="workflow-arrow">↓</div> */}
 
             <div className="workflow-step">
               <img src={step2} alt="Select Plan" className="step-icon" />
               <div className="step-text">Select Your Plan</div>
             </div>
-            <div className="workflow-arrow">↓</div>
+            {/* <div className="workflow-arrow">↓</div> */}
 
             <div className="workflow-step">
               <img src={step3} alt="Free Installation" className="step-icon" />
               <div className="step-text">Free Installation</div>
             </div>
-            <div className="workflow-arrow">↓</div>
+            {/* <div className="workflow-arrow">↓</div> */}
 
             <div className="workflow-step">
               <img src={step4} alt="Enjoy Pure Water" className="step-icon" />
@@ -96,7 +96,7 @@ function Specification() {
       {/* Subscription Banner */}
       <div className="subscribe-banner">
         <p>
-          Start Your Subscription Today And Enjoy <br />
+          Start Your Subscription Today And Enjoy
           Pure Water, Worry-Free.
         </p>
         <button

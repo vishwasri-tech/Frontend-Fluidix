@@ -1,14 +1,52 @@
-.banner {
+
+
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure no default page gaps and full-height for safe layout control */
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8fbff;
+}
+
+/* CSS vars */
+:root {
+  --specs-overlap: 60px; /* how much specs box overlaps hero (adjust if needed) */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Global typography */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.4;
+  color: #0b1220;
+}
+
+
+
+
+.banner-section {
   width: 100%;
   background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
   padding: 3rem 1.5rem 5rem;
   box-sizing: border-box;
-  height: 80vh; /* desktop fixed */
+  height: 80vh;
   position: relative;
 }
 
 /* Top section layout */
-.banner-container {
+.banner-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -19,54 +57,54 @@
 }
 
 /* Left Image */
-.banner-left {
+.banner-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
-.machine-img {
-  width: 500px;
+.banner-machine-img {
+  width: 600px;
   max-width: 100%;
   height: 500px;
   object-fit: contain;
 }
 
 /* Right Content */
-.banner-right {
+.banner-content {
   flex: 1;
   text-align: left;
   margin-top: -80px;
 }
 
-.banner-right h2 {
+.banner-content h2 {
   font-size: 2rem;
   color: #1e3a8a;
   font-weight: 700;
   line-height: 1.4;
 }
 
-.subtitle {
+.banner-subtitle {
   margin-top: 0.5rem;
   font-size: 1rem;
   color: #08007C;
 }
 
-.plan-text {
+.banner-plan-text {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
   color: #08007C;
 }
 
-.price {
+.banner-price {
   font-size: 1.8rem;
   font-weight: 700;
   color: #1e3a8a;
 }
 
-.subscribe-btn {
+.banner-subscribe-btn {
   margin-top: 1.5rem;
   background: #FFFFFF !important;
   color: #08007C !important;
@@ -79,36 +117,36 @@
   transition: background 0.3s ease;
 }
 
-.subscribe-btn:hover {
+.banner-subscribe-btn:hover {
   background: #1e40af;
 }
 
-/* Bottom Feature Bar */
-.feature-bar {
+/* Bottom Feature Section */
+.feature-section {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
-  margin: -50px auto 0; /* sit at edge of blue background */
+  margin: -50px auto 0;
   padding: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* clean grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   position: relative;
   z-index: 5;
 }
 
-.feature {
+.feature-item {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1rem;
   color: #333;
   font-weight: 500;
-  justify-content: flex-start; /* align all icons/text from same starting point */
+  justify-content: flex-start;
 }
 
-.feature-icon {
+.feature-icon-img {
   width: 28px;
   height: 28px;
   object-fit: contain;
@@ -116,76 +154,77 @@
 
 /* Responsive - Tablets */
 @media (max-width: 1024px) {
-  .banner {
-    height: auto; /* let banner grow with content */
+  .banner-section {
+    height: auto;
     padding: 2.5rem 1rem 4rem;
   }
 
-  .banner-container {
+  .banner-wrapper {
     flex-direction: column;
     text-align: center;
   }
 
-  .banner-right {
+  .banner-content {
     text-align: center;
-    margin-top: 0; /* remove overlap */
+    margin-top: 0;
   }
 
-  .subscribe-btn {
+  .banner-subscribe-btn {
     align-self: center;
   }
 
-  .feature-bar {
+  .feature-section {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.2rem;
     padding: 2rem;
-    margin-top: -40px; /* keep touching banner */
+    margin-top: -40px;
   }
 }
 
 /* Responsive - Mobiles */
 @media (max-width: 600px) {
-  .banner {
-    height: auto; /* auto adjusts to content */
+  .banner-section {
+    height: auto;
     padding: 2rem 1rem 3.5rem;
   }
 
-  .machine-img {
+  .banner-machine-img {
     width: 100%;
     height: auto;
     max-width: 250px;
   }
 
-  .banner-right h2 {
+  .banner-content h2 {
     font-size: 1.5rem;
   }
 
-  .price {
+  .banner-price {
     font-size: 1.5rem;
   }
 
-  .subscribe-btn {
+  .banner-subscribe-btn {
     font-size: 0.9rem;
     padding: 10px 20px;
   }
 
-  .feature-bar {
+  .feature-section {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 1.5rem;
     margin-top: 30px;
   }
 
-  .feature {
+  .feature-item {
     font-size: 0.9rem;
   }
 
-  .feature-icon {
+  .feature-icon-img {
     width: 24px;
     height: 24px;
   }
 }
-@media (min-width: 768px) and (max-width:1024px) {
-  .feature-bar {
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .feature-section {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 1.5rem;
     margin-top: 30px;

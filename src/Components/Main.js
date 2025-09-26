@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";  // ✅ import navigate hook
 import "./Main.css";
 
 import machineImage from "../assets/Main.png";
@@ -8,46 +9,59 @@ import serviceIcon from "../assets/service.png";
 import plansIcon from "../assets/affordable.png";
 
 const Banner = () => {
+  const navigate = useNavigate();  // ✅ initialize navigate
+
+  const handleSubscribe = () => {
+    navigate("/product50");  // ✅ navigate to products50
+  };
+
   return (
-    <div className="banner">
+    <div className="banner-section">
       {/* Top Section */}
-      <div className="banner-container">
+      <div className="banner-wrapper">
         {/* Left Image */}
-        <div className="banner-left">
-          <img src={machineImage} alt="Water Machine" className="machine-img" />
+        <div className="banner-image-container">
+          <img src={machineImage} alt="Water Machine" className="banner-machine-img" />
         </div>
 
         {/* Right Content */}
-        <div className="banner-right">
+        <div className="banner-content">
           <h2>
             PURE WATER MADE <br />
             SIMPLE, SAFE, AND SMART.
           </h2>
-          <p className="subtitle">Flexible plans, hassle-free water.</p>
-          <p className="plan-text">
-            Plan Starts @{" "}<br></br><br></br>
-            <span className="price">₹2,000*</span> / Month
+          <p className="banner-subtitle">Flexible plans, hassle-free water.</p>
+          <p className="banner-plan-text">
+            Plan Starts @{" "}
+            <br />
+            <br />
+            <span className="banner-price">₹2,000*</span> / Month
           </p>
-          <button className="subscribe-btn">SUBSCRIBE NOW</button>
+          <button 
+            className="banner-subscribe-btn" 
+            onClick={handleSubscribe}  // ✅ navigate on click
+          >
+            SUBSCRIBE NOW
+          </button>
         </div>
       </div>
 
       {/* Bottom Features */}
-      <div className="feature-bar">
-        <div className="feature">
-          <img src={installIcon} alt="Free Installation" className="feature-icon" />
+      <div className="feature-section">
+        <div className="feature-item">
+          <img src={installIcon} alt="Free Installation" className="feature-icon-img" />
           <span>Free Installation</span>
         </div>
-        <div className="feature">
-          <img src={technicianIcon} alt="Certified Technicians" className="feature-icon" />
+        <div className="feature-item">
+          <img src={technicianIcon} alt="Certified Technicians" className="feature-icon-img" />
           <span>Certified Technicians</span>
         </div>
-        <div className="feature">
-          <img src={serviceIcon} alt="Regular Service" className="feature-icon" />
+        <div className="feature-item">
+          <img src={serviceIcon} alt="Regular Service" className="feature-icon-img" />
           <span>Regular Service</span>
         </div>
-        <div className="feature">
-          <img src={plansIcon} alt="Affordable Plans" className="feature-icon" />
+        <div className="feature-item">
+          <img src={plansIcon} alt="Affordable Plans" className="feature-icon-img" />
           <span>Affordable Plans</span>
         </div>
       </div>

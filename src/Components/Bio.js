@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";  // ✅ import Link
 import "./bio.css";
 
 // import images from assets
@@ -13,7 +14,7 @@ function Bio() {
         {/* Left Section - Logo & Social */}
         <div className="footer-left">
           <h2 className="footer-logo">
-            Fluidix <span>Pure Water Zero Hassel</span>
+            Fluidix <span>Pure Water Zero Hassle</span>
           </h2>
           <p className="footer-description">
             Fluidix makes clean water simple and reliable. With easy rental plans and
@@ -49,11 +50,11 @@ function Bio() {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Plans</a></li>
-            <li><a href="#">Custom Products</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/plans">Plans</Link></li>
+            <li><Link to="/custom">Custom Products</Link></li>
+            <li><Link to="/about">About Us</Link></li>
           </ul>
         </div>
 
