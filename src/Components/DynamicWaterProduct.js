@@ -1,73 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
 import "./DynamicWaterProduct.css";
 
 // images - replace with your paths
-import img50   from "../assets/50lph.png";
-import img100  from "../assets/50lph.png";
-import img250  from "../assets/250lph.png";
-import img500  from "../assets/500lph.png";
+import img50 from "../assets/50lph.png";
+import img100 from "../assets/50lph.png";
+import img250 from "../assets/250lph.png";
+import img500 from "../assets/500lph.png";
 import img1000 from "../assets/1000lph.png";
 import img2000 from "../assets/2000lph.png";
 
 export default function DynamicWaterProduct() {
-  const flowOptions = [
-    "50 LPH",
-    "100 LPH",
-    "250 LPH",
-    "500 LPH",
-    "1000 LPH",
-    "2000 LPH",
-  ];
+  const navigate = useNavigate(); // ✅ initialize navigation
+
+  const flowOptions = ["50 LPH", "100 LPH", "250 LPH", "500 LPH", "1000 LPH", "2000 LPH"];
 
   const productData = {
-    "50 LPH": {
-      img: img50,
-      start: 2000,
-      plans: {
-        "24": { months: 24, price: 1800, save: 2400 },
-        "12": { months: 12, price: 2000, save: 1200 },
-      },
-    },
-    "100 LPH": {
-      img: img100,
-      start: 3500,
-      plans: {
-        "24": { months: 24, price: 3150, save: 2400 },
-        "12": { months: 12, price: 3500, save: 1200 },
-      },
-    },
-    "250 LPH": {
-      img: img250,
-      start: 8400,
-      plans: {
-        "24": { months: 24, price: 7560, save: 2400 },
-        "12": { months: 12, price: 8400, save: 1200 },
-      },
-    },
-    "500 LPH": {
-      img: img500,
-      start: 10000,
-      plans: {
-        "24": { months: 24, price: 9000, save: 2400 },
-        "12": { months: 12, price: 10000, save: 1200 },
-      },
-    },
-    "1000 LPH": {
-      img: img1000,
-      start: 15000,
-      plans: {
-        "24": { months: 24, price: 13500, save: 2400 },
-        "12": { months: 12, price: 15000, save: 1200 },
-      },
-    },
-    "2000 LPH": {
-      img: img2000,
-      start: 22000,
-      plans: {
-        "24": { months: 24, price: 19800, save: 2400 },
-        "12": { months: 12, price: 22000, save: 1200 },
-      },
-    },
+    "50 LPH": { img: img50, start: 2000, plans: { "24": { months: 24, price: 1800, save: 2400 }, "12": { months: 12, price: 2000, save: 1200 } } },
+    "100 LPH": { img: img100, start: 3500, plans: { "24": { months: 24, price: 3150, save: 2400 }, "12": { months: 12, price: 3500, save: 1200 } } },
+    "250 LPH": { img: img250, start: 8400, plans: { "24": { months: 24, price: 7560, save: 2400 }, "12": { months: 12, price: 8400, save: 1200 } } },
+    "500 LPH": { img: img500, start: 10000, plans: { "24": { months: 24, price: 9000, save: 2400 }, "12": { months: 12, price: 10000, save: 1200 } } },
+    "1000 LPH": { img: img1000, start: 15000, plans: { "24": { months: 24, price: 13500, save: 2400 }, "12": { months: 12, price: 15000, save: 1200 } } },
+    "2000 LPH": { img: img2000, start: 22000, plans: { "24": { months: 24, price: 19800, save: 2400 }, "12": { months: 12, price: 22000, save: 1200 } } },
   };
 
   const [selectedFlow, setSelectedFlow] = useState("50 LPH");
@@ -76,11 +30,9 @@ export default function DynamicWaterProduct() {
   const current = productData[selectedFlow];
   const selectedPlan = current.plans[selectedPeriod];
 
-  // Correct calculation
   const oldTotalForPlan = selectedPlan.price * selectedPlan.months;
   const totalForPlan = oldTotalForPlan - selectedPlan.save;
 
-  // Indian number format
   const fmt = (n) => (typeof n === "number" ? n.toLocaleString("en-IN") : n);
 
   return (
@@ -93,7 +45,7 @@ export default function DynamicWaterProduct() {
             className={`dwp-tab ${selectedFlow === opt ? "dwp-tab--active" : ""}`}
             onClick={() => {
               setSelectedFlow(opt);
-              setSelectedPeriod("24"); // reset plan to 24 months
+              setSelectedPeriod("24");
             }}
           >
             {opt}
@@ -161,7 +113,10 @@ export default function DynamicWaterProduct() {
                   <div className="dwp-old">₹{fmt(oldTotalForPlan)}</div>
                   <div className="dwp-total">₹{fmt(totalForPlan)}</div>
                 </div>
-                <button className="dwp-cta">Subscribe Now</button>
+                {/* ✅ Navigate to Enquire Page */}
+                <button className="dwp-cta" onClick={() => navigate("/enquire")}>
+                  Subscribe Now
+                </button>
               </div>
             </div>
           </div>

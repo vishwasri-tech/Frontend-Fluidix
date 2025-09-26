@@ -1,14 +1,20 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
 import "./Specifications2.css";
 
 // Import your local images
-import step1 from "../assets/product.png"; // Choose Product
-import step2 from "../assets/plan.png"; // Select Plan
-import step3 from "../assets/install.png"; // Installation
-import step4 from "../assets/water.png"; // Pure Water
+import step1 from "../assets/product.png";
+import step2 from "../assets/plan.png";
+import step3 from "../assets/install.png";
+import step4 from "../assets/water.png";
 
 function Specification2() {
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  const handleSubscribe = () => {
+    navigate("/plans"); // ✅ Navigate to Plans page
+  };
+
   return (
     <section className="specification">
       <div className="spec-container">
@@ -31,11 +37,11 @@ function Specification2() {
               </tr>
               <tr>
                 <td>Pre-Filtration</td>
-                <td>sand + carbon + micron filter</td>
+                <td>Sand + Carbon + Micron Filter</td>
               </tr>
               <tr>
                 <td>Pump</td>
-                <td>1.5 HP pump</td>
+                <td>1.5 HP Pump</td>
               </tr>
               <tr>
                 <td>Power Requirement</td>
@@ -97,7 +103,9 @@ function Specification2() {
           Start Your Subscription Today And Enjoy <br />
           Pure Water, Worry-Free.
         </p>
-        <button className="subscribe-btn">Subscribe Now</button>
+        <button className="subscribe-btn" onClick={handleSubscribe}>
+          Subscribe Now
+        </button>
       </div>
     </section>
   );

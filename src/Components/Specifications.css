@@ -3,7 +3,7 @@
   color: #222;
 }
 
-/* Container */
+/* Layout */
 .spec-container {
   display: flex;
   justify-content: flex-start;
@@ -12,7 +12,7 @@
   padding: 2rem 5%;
 }
 
-/* Desktop only → shift container to right */
+/* On Desktop shift to right */
 @media (min-width: 1025px) {
   .spec-container {
     margin-left: 10%;
@@ -20,18 +20,12 @@
   }
 }
 
-/* Left Section */
+/* Product Specs - Left */
 .spec-left h2 {
   font-size: 24px;
   margin-bottom: 1rem;
   color: #08007c;
   text-align: left;
-}
-
-.spec-subtitle {
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 1.5rem;
 }
 
 .spec-table {
@@ -54,72 +48,71 @@
   background: #f9f9f9;
 }
 
-/* Right Section */
-.spec-right h2 {
+/* Right: How it works */
+.flow-title {
   font-size: 24px;
-  margin-bottom: 1rem;
-  color: #08007c;
-  text-align: left;
+  font-weight: bold;
+  color: #1e1b4b;
+  margin-bottom: 0.5rem;
 }
 
-.workflow {
+.flow-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.flow-steps-vertical {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-
-.workflow-step {
-  display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
-.step-icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-  background: #f0f4ff;
-  padding: 8px;
+.flow-step {
+  text-align: center;
+}
+
+.step-img {
+  width: 20px;
+  height: 20px;
   object-fit: contain;
+  margin: 0 auto;
 }
 
-.step-text {
-  font-size: 14px;
-  font-weight: 700;
-  color: #08007c;
+.step-title {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
 }
 
-/* Arrow between steps */
-.workflow-arrow {
-  font-size: 20px;
-  color: #1e2a78;
-  margin: -5px 0 10px 25px;
+/* Arrow style */
+.arrow-vertical {
+  font-size: 2rem;
+  color: #a49fe9;
+  margin: 0.5rem 0;
 }
 
-/* Subscription Banner */
+/* CTA Banner */
 .subscribe-banner {
   background: #1e2a78;
   color: white;
   margin-top: 2rem;
   border-radius: 12px;
-
-  display: flex;               /* side by side layout */
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-left: 10px;
-    margin-right: 10px;
-
   padding: 2rem 3rem;
-  margin-bottom:50px ;
+  margin: 2rem 10px 4rem;
 }
 
 .subscribe-banner p {
   font-size: 18px;
   font-weight: 600;
   margin: 0;
-  flex: 1;                     /* take available space */
+  flex: 1;
   text-align: left;
 }
 
@@ -133,7 +126,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: background 0.3s ease;
-  flex-shrink: 0;              /* keep button size */
+  flex-shrink: 0;
 }
 
 .subscribe-btn:hover {
@@ -154,20 +147,22 @@
     gap: 2rem;
   }
 
-  .workflow-step {
-    flex-direction: row;
-    align-items: center;
+  .step-img {
+    width: 60px;
+    height: 60px;
   }
 
-  .step-icon {
-    width: 40px;
-    height: 40px;
+  .step-title {
+    font-size: 0.95rem;
   }
 
-  /* Banner stacked on tablet/mobile */
+  .arrow-vertical {
+    font-size: 1.5rem;
+  }
+
   .subscribe-banner {
     flex-direction: column;
-    align-items: flex-start;   /* keep text left aligned */
+    align-items: flex-start;
     text-align: left;
     padding: 1.5rem 2rem;
   }
@@ -178,7 +173,7 @@
   }
 
   .subscribe-btn {
-    align-self: flex-start;    /* button aligns left under text */
+    align-self: flex-start;
   }
 }
 
@@ -186,19 +181,6 @@
   .spec-table td {
     font-size: 12px;
     padding: 10px;
-  }
-
-  .step-text {
-    font-size: 13px;
-  }
-
-  .step-icon {
-    width: 35px;
-    height: 35px;
-  }
-
-  .workflow-arrow {
-    margin-left: 15px;
   }
 
   .subscribe-banner {

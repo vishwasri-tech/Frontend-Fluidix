@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import "./Vision.css";
 import installIcon from "../assets/installation.png";
 import techIcon from "../assets/technician.png";
@@ -7,6 +8,12 @@ import pricingIcon from "../assets/affordable.png";
 import waterIcon from "../assets/water.png";
 
 export default function VisionAndWhy() {
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  const handleViewPlans = () => {
+    navigate("/plans"); // ✅ Navigate to Plans page
+  };
+
   return (
     <section className="vision-why">
       {/* Vision Section */}
@@ -77,7 +84,9 @@ export default function VisionAndWhy() {
           Make the smart choice for clean water. Explore Fluidix plans today and
           enjoy hassle-free installation. All in one simple subscription.
         </p>
-        <button className="cta-btn1">View Plans</button>
+        <button className="cta-btn1" onClick={handleViewPlans}>
+          View Plans
+        </button>
       </div>
     </section>
   );

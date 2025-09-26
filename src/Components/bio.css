@@ -2,10 +2,11 @@
    Footer Section
 ===================== */
 .footer {
-  background: #1877f2; /* matches screenshot blue */
+  background: #1877f2;
   color: #fff;
-  padding: 2rem 5%;
+  padding: 2.5rem 5%;
   font-family: "Arial", sans-serif;
+  text-align: left; /* <--- ensures text starts from left globally */
 }
 
 .footer-container {
@@ -14,9 +15,16 @@
   align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
+  text-align: left; /* <--- aligns content within container to the left */
 }
 
-/* Left section */
+/* Left Section */
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+  text-align: left; /* <--- explicitly aligns this section */
+}
+
 .footer-logo {
   font-size: 28px;
   font-weight: 700;
@@ -30,9 +38,16 @@
   margin-top: 0.25rem;
 }
 
-.social-text {
-  margin: 1rem 0 0.5rem;
+.footer-description {
   font-size: 14px;
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #eaf2ff;
+}
+
+.social-text {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
   color: #fff;
 }
 
@@ -46,7 +61,7 @@
 }
 
 .social-img {
-  width: 28px;   /* adjust size as needed */
+  width: 28px;
   height: 28px;
   object-fit: contain;
   transition: transform 0.2s ease-in-out;
@@ -56,8 +71,13 @@
   transform: scale(1.1);
 }
 
+/* Middle Section - Quick Links */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+  text-align: left; /* <--- ensure quick links are left-aligned */
+}
 
-/* Middle & Right Sections */
 .footer-links h3 {
   font-size: 16px;
   margin-bottom: 1rem;
@@ -85,6 +105,38 @@
   color: #e6e9ff;
 }
 
+/* Right Section - Support */
+.footer-support {
+  flex: 1;
+  min-width: 220px;
+  text-align: left; /* <--- align support text to the left */
+}
+
+.footer-support h3 {
+  font-size: 16px;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.footer-support p {
+  font-size: 14px;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.footer-support a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-support a:hover {
+  text-decoration: underline;
+}
+
+.address-heading {
+  margin-top: 1.5rem;
+}
+
 /* =====================
    Responsive
 ===================== */
@@ -93,13 +145,15 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+    text-align: left; /* <--- enforce left alignment on smaller screens */
   }
 
   .footer-logo {
     font-size: 24px;
   }
 
-  .footer-links h3 {
+  .footer-links h3,
+  .footer-support h3 {
     font-size: 15px;
   }
 }

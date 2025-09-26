@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
 import "./Plan2.css";
 
 export default function Plan2() {
+  const navigate = useNavigate();
+
   // Function when a plan is selected
   const handleSelectPlan = (plan) => {
-    alert(`${plan} Plan Selected`);
+    // Navigate to Plans page
+    navigate("/plans");  // ✅ Goes to Plans page
   };
 
   return (

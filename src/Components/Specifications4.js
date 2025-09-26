@@ -1,14 +1,20 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import "./Specifications.css";
 
 // Import your local images
-import step1 from "../assets/product.png"; // Choose Product
-import step2 from "../assets/plan.png"; // Select Plan
-import step3 from "../assets/install.png"; // Installation
-import step4 from "../assets/water.png"; // Pure Water
+import step1 from "../assets/product.png";
+import step2 from "../assets/plan.png";
+import step3 from "../assets/install.png";
+import step4 from "../assets/water.png";
 
 function Specification4() {
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  const handleSubscribe = () => {
+    navigate("/plans"); // ✅ Navigate to Plans page
+  };
+
   return (
     <section className="specification">
       <div className="spec-container">
@@ -97,7 +103,9 @@ function Specification4() {
           Start Your Subscription Today And Enjoy <br />
           Pure Water, Worry-Free.
         </p>
-        <button className="subscribe-btn">Subscribe Now</button>
+        <button className="subscribe-btn" onClick={handleSubscribe}>
+          Subscribe Now
+        </button>
       </div>
     </section>
   );

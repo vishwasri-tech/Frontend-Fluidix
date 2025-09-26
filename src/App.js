@@ -24,6 +24,7 @@ import Specification5 from "./Components/Specifications5";
 import Specification4 from "./Components/Specifications4";
 import Specification3 from "./Components/Specifications3";
 import DynamicWaterProduct from "./Components/DynamicWaterProduct";
+import ContactWhy from "./Components/ContactWhy";
 // Import other specification components as needed  
 
 // Individual Product Pages
@@ -68,6 +69,7 @@ function App() {
                 <OurProducts />
                 <Reason />
                 <Flow />
+                <Bio />
               </>
             }
           />
@@ -88,6 +90,7 @@ function App() {
                 <About />
                 <Mission />
                 <Vision />
+                <Bio />
               </>
             }
           />
@@ -99,6 +102,7 @@ function App() {
                 <Custom/>
                 <HowItWorks/>
                 <Form/>
+                <Bio />
                 
               </>
             }
@@ -109,12 +113,25 @@ function App() {
             element={
               <>
                 <DynamicWaterProduct/>
+                <Flow />
+                <Bio />
               </>
             }
           />
 
           {/* Enquire Page */}
-          <Route path="/enquire" element={<Enquire />} />
+         <Route
+  path="/enquire"
+  element={
+    <>
+      <Enquire />
+      <ContactWhy />
+      <Bio />
+      
+    </>
+  }
+/>
+
         </Routes>
       </div>
     </Router>

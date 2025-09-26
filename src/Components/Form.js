@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import Link
 import './Form.css';
 
 const CustomROForm = () => {
@@ -6,7 +7,10 @@ const CustomROForm = () => {
     <div className="ro-form-wrapper">
       <div className="ro-form-container">
         <div className="ro-info-box">
-          <h4>Fill Out The Form To Get Your Custom RO Solution.<br />Our Team Will Contact You Shortly.</h4>
+          <h4>
+            Fill Out The Form To Get Your Custom RO Solution.<br />
+            Our Team Will Contact You Shortly.
+          </h4>
           <p><strong>Tailored Water Treatment Plants Above 2000 LPH.</strong></p>
           <p>
             At Fluidix, we design and deliver large-scale RO systems customized to your exact requirements.
@@ -31,7 +35,11 @@ const CustomROForm = () => {
 
       <div className="ro-footer-cta">
         <p>Your clean water journey starts with one Call.</p>
-        <button>Contact</button>
+        
+        {/* ✅ Navigation to Enquire page */}
+        <Link to="/enquire">
+          <button>Contact</button>
+        </Link>
       </div>
     </div>
   );

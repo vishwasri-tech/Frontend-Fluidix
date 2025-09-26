@@ -1,5 +1,6 @@
 import React from "react";
-import "./feature.css";   // ✅ scoped import
+import { Link } from "react-router-dom"; // ✅ Import Link
+import "./feature.css";
 
 // Import images from assets
 import F1 from "../assets/F1.png";
@@ -30,7 +31,7 @@ function Feature() {
         <div className="feature-card">
           <img src={F3} alt="Installation & Support" className="feature-img" />
           <div className="feature-text">
-            <div className="feature-text">Hassle-Free Installation & Support</div>
+            Hassle-Free Installation & Support
           </div>
         </div>
 
@@ -44,7 +45,9 @@ function Feature() {
         <h3>
           Precision Filtration For Unique <br /> Industry Needs!
         </h3>
-        <a href="#" className="cta-button">🎧 Talk To An Expert</a>
+        
+        {/* ✅ Navigation to Enquire Page */}
+        <Link to="/enquire" className="cta-button">🎧 Contact Us</Link>
       </section>
     </section>
   );

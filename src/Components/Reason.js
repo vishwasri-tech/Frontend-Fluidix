@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";  // ✅ Import Link
 import "./Reason.css";
 
 // Import images from src/assets
@@ -54,7 +55,11 @@ function Reason() {
         <h3>
           Find The Right RO System For Your Home, Business, Or Industry.
         </h3>
-        <button className="reason-btn">Contact Us</button>
+
+        {/* ✅ Navigate to Enquire page */}
+        <Link to="/enquire">
+          <button className="reason-btn">Contact Us</button>
+        </Link>
       </div>
     </section>
   );

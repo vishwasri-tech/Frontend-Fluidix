@@ -1,5 +1,5 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import
 import "./Specifications.css";
 
 // Import your local images
@@ -9,6 +9,8 @@ import step3 from "../assets/install.png"; // Installation
 import step4 from "../assets/water.png"; // Pure Water
 
 function Specification() {
+  const navigate = useNavigate(); // ✅ hook for navigation
+
   return (
     <section className="specification">
       <div className="spec-container">
@@ -97,7 +99,12 @@ function Specification() {
           Start Your Subscription Today And Enjoy <br />
           Pure Water, Worry-Free.
         </p>
-        <button className="subscribe-btn">Subscribe Now</button>
+        <button
+          className="subscribe-btn"
+          onClick={() => navigate("/plans")} // ✅ navigate to plans
+        >
+          Subscribe Now
+        </button>
       </div>
     </section>
   );

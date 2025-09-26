@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Plans.css";
 import plan50 from "../assets/plan50.png";
 import plan250 from "../assets/plan250.png";
@@ -19,6 +20,7 @@ export default function Plans() {
         "5 micron Filter",
       ],
       price: "₹2,000*/Month",
+      route: "/product50",   // ✅ Added route
     },
     {
       id: 2,
@@ -33,6 +35,7 @@ export default function Plans() {
         "Anti-scalent Dosing Pump-1",
       ],
       price: "₹5,000*/Month",
+      route: "/product250",   // ✅ Added route
     },
     {
       id: 3,
@@ -47,6 +50,7 @@ export default function Plans() {
         "Anti-scalent Dosing Pump-1",
       ],
       price: "₹10,000*/Month",
+      route: "/product500",   // ✅ Added route
     },
   ];
 
@@ -78,7 +82,11 @@ export default function Plans() {
                 ))}
               </ul>
               <p className="plan-price">Starts at {plan.price}</p>
-              <button className="plan-btn">View Details</button>
+
+              {/* ✅ Added navigation */}
+              <Link to={plan.route}>
+                <button className="plan-btn">View Details</button>
+              </Link>
             </div>
           </div>
         ))}
