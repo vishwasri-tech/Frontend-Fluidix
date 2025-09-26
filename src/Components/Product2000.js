@@ -1,10 +1,15 @@
-// src/components/Product2000.js
-
 import React from "react";
-import plan2000 from "../assets/2000lph.png"; // make sure this image exists
+import { useNavigate } from "react-router-dom";
+import plan2000 from "../assets/2000lph.png";
 import "./Product2000.css";
 
 export default function Product2000() {
+  const navigate = useNavigate();
+
+  const handleSubscribe = () => {
+    navigate("/plans", { state: { flow: "2000 LPH" } });
+  };
+
   return (
     <div className="product2000-container">
       <div className="product2000-left">
@@ -23,7 +28,9 @@ export default function Product2000() {
           Plan start @<strong>₹22,000 / Month</strong>
         </p>
 
-        <button className="product2000-subscribe-btn">SUBSCRIBE NOW</button>
+        <button className="product2000-subscribe-btn" onClick={handleSubscribe}>
+          SUBSCRIBE NOW
+        </button>
 
         <div className="product2000-benefits">
           <h4 className="product2000-benefits-title">Product Benefits</h4>

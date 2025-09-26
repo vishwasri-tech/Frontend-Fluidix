@@ -1,10 +1,15 @@
-// src/components/Product1000.js
-
 import React from "react";
-import plan1000 from "../assets/1000lph.png"; // make sure this image exists
+import { useNavigate } from "react-router-dom";
+import plan1000 from "../assets/1000lph.png";
 import "./Product1000.css";
 
 export default function Product1000() {
+  const navigate = useNavigate();
+
+  const handleSubscribe = () => {
+    navigate("/plans", { state: { flow: "1000 LPH" } });
+  };
+
   return (
     <div className="product1000-container">
       <div className="product1000-left">
@@ -23,7 +28,9 @@ export default function Product1000() {
           Plan start @<strong>₹15,000 / Month</strong>
         </p>
 
-        <button className="product1000-subscribe-btn">SUBSCRIBE NOW</button>
+        <button className="product1000-subscribe-btn" onClick={handleSubscribe}>
+          SUBSCRIBE NOW
+        </button>
 
         <div className="product1000-benefits">
           <h4 className="product1000-benefits-title">Product Benefits</h4>

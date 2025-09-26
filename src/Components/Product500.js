@@ -1,10 +1,15 @@
-// src/components/Product500.js
-
 import React from "react";
-import plan500 from "../assets/500lph.png"; // make sure this image exists
+import { useNavigate } from "react-router-dom";
+import plan500 from "../assets/500lph.png";
 import "./Product500.css";
 
 export default function Product500() {
+  const navigate = useNavigate();
+
+  const handleSubscribe = () => {
+    navigate("/plans", { state: { flow: "500 LPH" } });
+  };
+
   return (
     <div className="product500-container">
       <div className="product500-left">
@@ -23,7 +28,9 @@ export default function Product500() {
           Plan start @<strong>₹10,000 / Month</strong>
         </p>
 
-        <button className="product500-subscribe-btn">SUBSCRIBE NOW</button>
+        <button className="product500-subscribe-btn" onClick={handleSubscribe}>
+          SUBSCRIBE NOW
+        </button>
 
         <div className="product500-benefits">
           <h4 className="product500-benefits-title">Product Benefits</h4>
