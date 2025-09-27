@@ -230,3 +230,36 @@ body {
     margin-top: 30px;
   }
 }
+/* Fade transition for banner */
+.fade-slide {
+  animation: fadeInSlide 0.2s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.larger-machine {
+  width: auto;
+  height:450px;
+  object-fit: cover;
+  transform: scale(1.05);
+   margin-top: 0.5rem;
+   margin-left: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .larger-machine {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+}
+
