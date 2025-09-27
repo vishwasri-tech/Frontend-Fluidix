@@ -3,33 +3,87 @@ import "./Enquire.css";
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function Enquire() {
+  const phoneNumber = "917816049032"; // <-- Use your correct WhatsApp number
+  const presetMessage = "Hi, I would like to enquire about your products.";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    presetMessage
+  )}`;
+
   const [formData, setFormData] = useState({
     name: "",
-    mobile: "",
+    mobileNumber: "",
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: null }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowPopup(true);
-    setFormData({
-      name: "",
-      mobile: "",
-      email: "",
-      message: "",
+  const validate = () => {
+    const errs = {};
+    if (!formData.name || formData.name.trim().length < 2)
+      errs.name = "Please enter your name.";
+    if (
+      !formData.mobileNumber ||
+      !/^[0-9]{7,15}$/.test(formData.mobileNumber)
+    )
+      errs.mobileNumber = "Enter a valid mobile number (digits only).";
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email))
+      errs.email = "Enter a valid email address.";
+    if (!formData.message || formData.message.trim().length < 5)
+      errs.message = "Please enter a short message.";
+    return errs;
+  };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  const validation = validate();
+  if (Object.keys(validation).length) {
+    setErrors(validation);
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("http://localhost:5000/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     });
-  };
 
-  const closePopup = () => {
-    setShowPopup(false);
-  };
+    const data = await res.json();
+
+    if (res.ok) {
+      setShowPopup(true); // ✅ show popup on success
+      setFormData({
+        name: "",
+        mobileNumber: "",
+        email: "",
+        message: "",
+      });
+      setErrors({});
+    } else {
+      alert("❌ " + (data.message || "Failed to submit enquiry"));
+    }
+  } catch (err) {
+    console.error("Error submitting enquiry:", err);
+    alert("❌ Server error. Please try again later.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+const closePopup = () => {
+  setShowPopup(false);
+};
+
 
   return (
     <section className="enquire-section">
@@ -53,6 +107,13 @@ export default function Enquire() {
               <span className="info-text">, 98480 37623</span>
             </div>
             <div className="info-item">
+              <a
+                href={whatsappUrl}
+                className="whatsapp-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on Whatsapp"
+              ></a>
               <div className="icon-wrap whatsapp">
                 <FaWhatsapp />
               </div>
@@ -88,15 +149,19 @@ export default function Enquire() {
               onChange={handleChange}
               required
             />
+            {errors.name && <p className="error">{errors.name}</p>}
             <input
               className="input"
               type="text"
-              name="mobile"
+              name="mobileNumber"
               placeholder="Mobile Number"
-              value={formData.mobile}
+              value={formData.mobileNumber}
               onChange={handleChange}
               required
             />
+            {errors.mobileNumber && (
+              <p className="error">{errors.mobileNumber}</p>
+            )}
             <input
               className="input"
               type="email"
@@ -106,6 +171,7 @@ export default function Enquire() {
               onChange={handleChange}
               required
             />
+            {errors.email && <p className="error">{errors.email}</p>}
             <textarea
               className="textarea"
               name="message"
@@ -114,6 +180,7 @@ export default function Enquire() {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
+            {errors.message && <p className="error">{errors.message}</p>}
 
             <div className="submit-row">
               <button className="submit-btn" type="submit">
