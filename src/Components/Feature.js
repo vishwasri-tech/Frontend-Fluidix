@@ -41,9 +41,9 @@ function Feature() {
         </div>
       </div>
 
-      <section className="cta-section">
+      <section className="cta-section11">
         <h3>
-          Precision Filtration For Unique <br /> Industry Needs!
+          Precision Filtration For Unique Industry Needs!
         </h3>
         
         {/* ✅ Navigation to Enquire Page */}

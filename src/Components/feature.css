@@ -160,7 +160,7 @@
 /* =====================
    CTA Section
 ===================== */
-.cta-section {
+.cta-section11 {
   background: #08007c;
   color: #fff;
   display: flex;
@@ -171,7 +171,7 @@
   border-radius: 12px; /* optional: makes section cleaner */
 }
 
-.cta-section h3 {
+.cta-section11 h3 {
   font-size: 1.6rem;
   font-weight: bold;
   margin: 0;
@@ -207,7 +207,7 @@
     grid-template-columns: 1fr; /* stack features on small screens */
   }
 
-  .cta-section {
+  .cta-section11 {
     flex-direction: column;
     text-align: center;
     gap: 1rem;

@@ -90,6 +90,7 @@
   display: flex;                /* enable flex */
   align-items: center;          /* vertical alignment */
   justify-content: space-between; /* text left, button right */
+  margin-bottom: 20px;
 }
 
 .cta-section1 p {

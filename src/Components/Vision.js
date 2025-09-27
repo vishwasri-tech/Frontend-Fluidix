@@ -8,10 +8,10 @@ import pricingIcon from "../assets/affordable.png";
 import waterIcon from "../assets/water.png";
 
 export default function VisionAndWhy() {
-  const navigate = useNavigate(); // ✅ Initialize navigation
+  const navigate = useNavigate();
 
   const handleViewPlans = () => {
-    navigate("/plans"); // ✅ Navigate to Plans page
+    navigate("/plans"); 
   };
 
   return (

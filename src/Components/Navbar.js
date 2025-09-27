@@ -58,15 +58,7 @@ export default function Navbar() {
               Plans
             </Link>
           </li>
-          <li>
-            <Link
-              to="/about"
-              className={activeLink === "about" ? "active" : ""}
-              onClick={handleClick}
-            >
-              About Us
-            </Link>
-          </li>
+         
           <li>
             <Link
               to="/custom"
@@ -74,6 +66,15 @@ export default function Navbar() {
               onClick={handleClick}
             >
               Custom Products
+            </Link>
+          </li>
+           <li>
+            <Link
+              to="/about"
+              className={activeLink === "about" ? "active" : ""}
+              onClick={handleClick}
+            >
+              About Us
             </Link>
           </li>
           <li>
