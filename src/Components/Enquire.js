@@ -101,10 +101,14 @@ const closePopup = () => {
               <div className="icon-wrap phone">
                 <FaPhoneAlt />
               </div>
-              <a className="info-text" href="tel:+917816059032">
-                78160 59032
+              <a className="info-text phone-numbers" href="tel:+917816059032">
+                78160 59032,  98480 37623
               </a>
-              <span className="info-text">, 98480 37623</span>
+                   {/* <a className="info-text phone-numbers" href="tel:+9198480 37623">
+                98480 37623
+              </a> */}
+          
+              {/* <span className="info-text">, 98480 37623</span> */}
             </div>
             <div className="info-item">
               <a

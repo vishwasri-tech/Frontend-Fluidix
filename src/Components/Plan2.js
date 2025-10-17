@@ -1,16 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
+import { useNavigate } from "react-router-dom";
 import "./Plan2.css";
-
 export default function Plan2() {
   const navigate = useNavigate();
-
-  // Function when a plan is selected
   const handleSelectPlan = (plan) => {
-    // Navigate to Plans page
-    navigate("/plans"); // ✅ Goes to Plans page
-  };
+    navigate("/plans");
 
+  };
   return (
     <div className="plan2-container">
       <h2 className="plan2-title">Choose a Plan That Fits You</h2>
@@ -37,8 +33,8 @@ export default function Plan2() {
           </div>
         </div>
 
-        {/* Premium Plan */}
-        <div className="plan2-card-container">
+ <div className="plan2-card-container">
+
           <h1 className="most-popular">MOST POPULAR</h1>
           <div className="plan2-card premium highlight">
             {/* <div className="plan2-badge">MOST POPULAR</div> */}
@@ -64,3 +60,5 @@ export default function Plan2() {
     </div>
   );
 }
+
+

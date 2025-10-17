@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom"; // ✅ Import Link
 import "./feature.css";
+import img from "../assets/phone.png"
 
 // Import images from assets
 import F1 from "../assets/F1.png";
 import F2 from "../assets/F2.png";
 import F3 from "../assets/F3.png";
 import F4 from "../assets/F4.png";
+
+
+
+
 
 function Feature() {
   return (
@@ -47,7 +52,9 @@ function Feature() {
         </h3>
         
         {/* ✅ Navigation to Enquire Page */}
-        <Link to="/enquire" className="cta-button">🎧 Contact Us</Link>
+        <Link to="/enquire" className="cta-button"><img src={img} alt="" style={{height:"15px"}} />Contact Us</Link>
+        
+
       </section>
     </section>
   );

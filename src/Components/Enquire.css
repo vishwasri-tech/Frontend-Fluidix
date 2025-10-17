@@ -50,7 +50,7 @@
   margin: 0 0 14px -280px;
   font-weight: 800;
 }
-.enquire-subtitle {
+/* .enquire-subtitle {
   color: rgba(255,255,255,0.95);
   max-width: 460px;
   line-height: 1.6;
@@ -59,19 +59,19 @@
   text-align: left;
 }
 
-/* info block */
-.enquire-info{
+/* info block *
+ .enquire-info{
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 6px;
-}
-.info-item{
+} 
+ .info-item{
   display: flex;
   align-items: center;
   gap: 14px;
-}
-.icon-wrap{
+} 
+ .icon-wrap{
   min-width: 36px;
   min-height: 36px;
   border-radius: 50%;
@@ -81,11 +81,94 @@
   background: rgba(255,255,255,0.12);
   box-shadow: 0 4px 8px rgba(0,0,0,0.06) inset;
   font-size: 18px;
-}
-.info-text{
+} 
+ .info-text{
   font-weight: 600;
   font-size: 18px;
+} 
+
+
+.info-text a{
+  display: inline-block;
+  min-width: 200px; /* ensures consistent start point *
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+} */
+
+
+
+
+
+/* Ensure all contact rows align in one clean vertical column */
+.info-item {
+  display: grid;
+  grid-template-columns: 42px auto; /* Fixed icon column width */
+  align-items: center;
+  width: 100%;
+  gap: 10px;
 }
+
+.icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 18px;
+  /* flex-shrink: 0; */
+}
+
+/* Ensures consistent text alignment */
+.info-text {
+
+  
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  line-height: 1.4;
+  margin-left: 0;
+      white-space: nowrap; /*👈 Removes any unintentional offset*/
+}
+
+/* Fix WhatsApp alignment — no link offset */
+.whatsapp-link {
+  display: none; /* Hide invisible anchor that was shifting layout */
+}
+
+/* Phone numbers inline */
+.info-text a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 6px;
+}
+
+.info-text a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* extra */
+/* Slightly tighter space between two phone numbers */
+.phone-numbers a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 6px;
+  display: inline-block;
+}
+.phone-numbers a:last-child {
+  margin-right: 0;
+}
+
+
+
+
 
 /* Remove underline from all links in enquire section */
 .enquire-section a {
@@ -393,3 +476,31 @@
   from { transform: translateY(-30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+
+
+
+
+
+
+/*extra*/
+/* RESPONSIVE — prevent wrapping even on mobile */
+@media (max-width: 480px) {
+  .info-item {
+    grid-template-columns: 36px auto;
+    gap: 8px;
+  }
+  .icon-wrap {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+  .info-text {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+
+
+

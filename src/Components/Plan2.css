@@ -36,19 +36,42 @@
 .plan2-card {
   background: white;
   border-radius: 18px;
-  padding: 40px 25px;
+  padding: 40px 25px 25px;
   width: 280px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   text-align: left;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps button at bottom */
+  min-height: 300px; /* Equal height for all cards */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .plan2-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
+
+ .plan2-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+} 
+
+/* Badge for Premium */
+ .plan2-badge {
+  background: #0d47a1;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 15px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+} 
 /* Headings & Duration */
 .plan2-heading {
   font-size: 20px;
@@ -59,10 +82,10 @@
 .plan2-duration {
   font-size: 25px;
   margin-bottom: 20px;
-}
+} 
 
 /* Features */
-.plan2-features {
+ .plan2-features {
   list-style: none;
   padding: 0;
   margin-bottom: 25px;
@@ -82,11 +105,9 @@
   left: 0;
   color: #2563eb;
   font-weight: bold;
-}
-
-/* Buttons */
-.plan2-btn {
-  display: block;
+} 
+/*Buttons */
+ .plan2-btn {
   width: 100%;
   padding: 14px;
   border: none;
@@ -100,21 +121,18 @@
 .plan2-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+} */
 
-/* Basic Plan Button (clickable, light color) */
-.basic-btn {
-  background: #e0e0e0; /* light gray */
-  color: #333; /* dark text */
+/* Specific Buttons */
+ .basic-btn {
+  background: #e0e0e0;
+  color: #333;
   border: 1px solid #ccc;
-  cursor: pointer;
 }
-
 .basic-btn:hover {
-  background: #d5d5d5; /* slightly darker on hover */
+  background: #d5d5d5;
 }
 
-/* Premium Plan */
 .premium {
   background: #5a8eff;
   border: none;
@@ -132,27 +150,11 @@
 
 .premium-btn:hover {
   background: #e0e0e0;
-}
-
+} 
 /* Highlight Premium */
 .highlight {
   z-index: 2;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  transform: translateY(-6px);
-}
-
-/* Badge */
-.plan2-badge {
-  background: #0d47a1;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 15px;
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Responsive */
@@ -161,16 +163,24 @@
     flex-direction: column;
     align-items: center;
   }
-
   .highlight {
-    transform: translateY(0);
     width: 300px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   }
-
   .plan2-badge {
     top: -10px;
     font-size: 11px;
     padding: 5px 10px;
   }
+} 
+.plan2-card-container {
+  padding-top: 25px;
+  border-radius: 20px;
+  background-color: #0c4dda;
 }
+.most-popular {
+  font-size: larger;
+  margin-bottom: 10px;
+  color: white;
+}
+
+
