@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";  // ✅ Import Link
+import { Link } from "react-router-dom"; // ✅ Import Link
 import "./Reason.css";
+import img from "../assets/phone.png";
 
 // Import images from src/assets
 import rsn1 from "../assets/rsn1.png";
@@ -52,13 +53,14 @@ function Reason() {
       </div>
 
       <div className="reason-cta">
-        <h3>
-          Find The Right RO System For Your Home, Business, Or Industry.
-        </h3>
+        <h3>Find The Right RO System For Your Home, Business, Or Industry.</h3>
 
         {/* ✅ Navigate to Enquire page */}
         <Link to="/enquire">
-          <button className="reason-btn">Contact Us</button>
+          <button className="reason-btn">
+            <img src={img} alt="" style={{ width: "30px" }} />
+            Contact Us
+          </button>
         </Link>
       </div>
     </section>

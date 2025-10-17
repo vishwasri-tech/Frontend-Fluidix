@@ -3,17 +3,17 @@
   align-items: center;
   justify-content: flex-start;
   padding: 60px 10%;
+  text-align: left;
   min-height: 500px;
 
   /* Background Image */
   background-image: url("../assets/about1.png");
-  background-size: cover;   
-  background-position: right center; 
+  background-size: cover;
+  background-position: right center;
   background-repeat: no-repeat;
 
   position: relative;
 }
-
 
 .about-fluidix::before {
   content: "";
@@ -36,15 +36,14 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #08007C;
+  color: #08007c;
   /* margin-right: 320px; */
-
 }
 
 .about-content p {
   font-size: 18px;
   line-height: 1.6;
-  color: #08007C;
+  color: #08007c;
 }
 
 /* Responsive */
@@ -62,17 +61,11 @@
 }
 @media (max-width: 540px) {
   .about-content h2 {
- 
-  color: black;
-  margin-right: 35%;
+    color: black;
+    margin-right: 35%;
+  }
 
-
+  .about-content p {
+    color: black;
+  }
 }
-
-.about-content p {
-  
-  color: black;
-}
-
-}
-

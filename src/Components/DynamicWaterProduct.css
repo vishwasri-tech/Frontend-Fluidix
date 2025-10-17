@@ -1,11 +1,11 @@
 /* -------------------------
    Variables & base reset
    ------------------------- */
-:root{
+:root {
   --primary: #2b77ff;
   --muted: #6c6f86;
   --card-bg: #fff;
-  --shadow: 0 14px 30px rgba(44,60,100,0.06);
+  --shadow: 0 14px 30px rgba(44, 60, 100, 0.06);
   --radius-lg: 14px;
   --radius-pill: 999px;
 }
@@ -15,7 +15,7 @@
   box-sizing: border-box;
   max-width: 1100px;
   margin: 16px auto;
-  padding: 12px 16px;
+  /* padding: 12px 80px; */
   font-family: "Inter", Arial, sans-serif;
   color: #26314a;
 }
@@ -23,27 +23,30 @@
 /* Tabs */
 .dwp-tabs {
   display: flex;
+  justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
 .dwp-tab {
+  flex: 1; /* each button takes equal width */
+  min-width: 130px; /* ensures readable buttons on small screens */
+  text-align: center;
   border-radius: var(--radius-pill);
-  padding: 6px 12px;
+  padding: 10px 14px;
   border: 1px solid #d7dbe5;
   background: var(--card-bg);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
-  transition: transform .12s, box-shadow .12s;
+  transition: all 0.15s ease-in-out;
 }
 .dwp-tab--active {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
-  box-shadow: 0 8px 18px rgba(43,119,255,0.14);
+  box-shadow: 0 6px 16px rgba(43, 119, 255, 0.2);
 }
-
 /* Main layout */
 .dwp-main {
   display: grid;
@@ -69,9 +72,9 @@
   padding: 2px;
 }
 .dwp-image {
-  height: 110%;       /* reduced height for smaller image */
+  height: 110%; /* reduced height for smaller image */
   max-height: 300px; /* max height limit */
-  width: auto;       /* maintain aspect ratio */
+  width: auto; /* maintain aspect ratio */
   object-fit: contain;
   filter: none !important;
   box-shadow: none !important;
@@ -92,7 +95,6 @@
 .dwp-right .dwp-card {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
-  padding: 0;
   border: 1px solid #e7ebf3;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -105,10 +107,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f3f4f9;
+  background: #c8c8c9;
   padding: 10px 14px;
 }
-.dwp-card-top-left { display: flex; align-items: center; gap: 8px; }
+.dwp-card-top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .dwp-title {
   color: #24346e;
   font-size: 16px;
@@ -140,7 +146,7 @@
 /* Body */
 .dwp-card-body {
   padding: 14px;
-  flex: 1; /* ensures card height stretches image container */
+  flex: 1;
 }
 .dwp-choose {
   margin: 0 0 10px 0;
@@ -159,35 +165,64 @@
   flex: 1 1 48%;
   min-width: 140px;
   border-radius: 12px;
-  padding: 12px;
   background: #fff;
   border: 1px solid #ebeff8;
   cursor: pointer;
-  transition: transform .12s, box-shadow .12s;
+  transition: transform 0.12s, box-shadow 0.12s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures child stretches to bottom */
+  padding-bottom: 0;
 }
-.dwp-plan:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(23,50,140,0.06); }
+.dwp-plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(23, 50, 140, 0.06);
+}
 
 /* selected plan */
 .dwp-plan--selected {
   background: #3a2f8f;
   color: #fff;
-  border-color: rgba(0,0,0,0.04);
-  box-shadow: 0 18px 36px rgba(58,47,143,0.16);
+  box-shadow: 0 18px 36px rgba(58, 47, 143, 0.16);
 }
-.dwp-plan-months { font-weight: 800; font-size: 13px; }
-.dwp-plan-price { font-size: 18px; font-weight: 800; margin-top: 8px; color: inherit; }
-.dwp-per { font-size: 12px; margin-left: 6px; font-weight: 600; opacity: .95; color: inherit; }
+.dwp-plan-months {
+  font-weight: 800;
+  font-size: 13px;
+  padding-top: 15px;
+}
+.dwp-plan-price {
+  padding: 10px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 8px;
+  color: inherit;
+}
+.dwp-per {
+  font-size: 12px;
+  margin-left: 6px;
+  font-weight: 600;
+  opacity: 0.95;
+  color: inherit;
+}
 
 /* save pill */
 .dwp-plan-save {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 10px;
-  border-radius: var(--radius-pill);
+  margin-top: auto; /* pushes it down */
+  width: 100%; /* full width */
+  text-align: center;
+  border-radius: 0 0 12px 12px; /* rounded bottom corners */
+  padding: 6px 0;
   font-weight: 700;
   background: #12b24a;
+  height: 30px;
   color: #fff;
   font-size: 12px;
+  margin-top: auto;
+
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
 }
 
 /* Subscribe row */
@@ -198,7 +233,11 @@
   margin-top: 14px;
   justify-content: space-between;
 }
-.dwp-prices { min-width: 140px; color: #6b7280; text-align: left; }
+.dwp-prices {
+  min-width: 140px;
+  color: #6b7280;
+  text-align: left;
+}
 
 /* old crossed price */
 .dwp-old {
@@ -225,18 +264,130 @@
   color: var(--primary);
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(43,119,255,0.06);
+  box-shadow: 0 6px 12px rgba(43, 119, 255, 0.06);
 }
-.dwp-cta:hover { background: rgba(43,119,255,0.06); }
+.dwp-cta:hover {
+  background: rgba(43, 119, 255, 0.06);
+}
 
 /* Benefits */
 .dwp-benefits {
   margin-top: 18px;
   text-align: left;
 }
-.dwp-benefits h2 { margin-bottom: 8px; color: #24346e; font-size: 18px; }
-.dwp-benefits p { color: #475569; line-height: 1.6; }
-.dwp-bestfor { margin-top: 8px; font-weight: 600; color: #28324a; }
+.dwp-benefits h2 {
+  margin-bottom: 8px;
+  color: #24346e;
+  font-size: 18px;
+}
+.dwp-benefits p {
+  color: #475569;
+  line-height: 1.6;
+}
+.dwp-bestfor {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #28324a;
+}
+
+.dwp-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* darker, stronger shadow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.dwp-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* darker hover shadow */
+}
+
+.dwp-cta {
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(43, 119, 255, 0.35); /* darker blue glow */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.dwp-cta:hover {
+  background: rgba(43, 119, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(43, 119, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.dwp-sub-row {
+  margin-top: 14px;
+}
+
+.dwp-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* even spacing */
+  padding: 14px 18px;
+  border-radius: 25px;
+  background: var(--primary-color, #ffffff); /* keep your existing color */
+  color: #007bff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.dwp-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Prices section in one line */
+.dwp-prices {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* small spacing between prices */
+}
+
+.dwp-old {
+  text-decoration: line-through;
+  color: #007bff;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.dwp-total {
+  font-weight: 700;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.dwp-cta-text {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Stick save div to bottom on desktop */
+.dwp-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dwp-plan-save {
+  position: relative; /* normal flow */
+  margin-top: auto; /* push to bottom of plan flex container */
+  width: 100%; /* full width */
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
 
 /* -------------------------
    Responsive breakpoints
@@ -244,33 +395,107 @@
 
 /* medium screens (tablet) */
 @media (max-width: 980px) {
-  .dwp-main { grid-template-columns: 1fr 340px; gap: 10px; justify-content: end; }
-  .dwp-image { max-height: 250px; height: 65%; }
-  .dwp-plan { flex: 1 1 48%; }
+  .dwp-main {
+    grid-template-columns: 1fr 340px;
+    gap: 10px;
+    justify-content: end;
+  }
+  .dwp-image {
+    max-height: 250px;
+    height: 65%;
+  }
+  .dwp-plan {
+    flex: 1 1 48%;
+  }
 }
 
 /* small screens: stack layout */
 @media (max-width: 880px) {
-  .dwp-main { grid-template-columns: 1fr; gap: 8px; justify-content: center; }
-  .dwp-image-area { height: auto; padding: 4px 0 8px; }
-  .dwp-image { height: auto; max-height: 180px; width: 100%; }
-  .dwp-card-topbar { padding: 10px 12px; }
-  .dwp-card-body { padding: 12px; }
-  .dwp-plans { gap: 8px; }
-  .dwp-plan { flex: 1 1 48%; min-width: 48%; padding: 10px; }
-  .dwp-sub-row { margin-top: 12px; }
+  .dwp-main {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    justify-content: center;
+  }
+  .dwp-image-area {
+    height: auto;
+    padding: 4px 0 8px;
+  }
+  .dwp-image {
+    height: auto;
+    max-height: 180px;
+    width: 100%;
+  }
+  .dwp-card-topbar {
+    padding: 10px 12px;
+  }
+
+  .dwp-plans {
+    gap: 8px;
+  }
+  .dwp-plan {
+    flex: 1 1 48%;
+    min-width: 48%;
+    padding: 10px;
+  }
+  .dwp-sub-row {
+    margin-top: 12px;
+  }
+}
+.dwp-tab:hover:not(.dwp-tab--active) {
+  background: #f6f8ff;
+  transform: translateY(-2px);
 }
 
 /* extra small phones */
 @media (max-width: 520px) {
-  .dwp-tabs { gap: 6px; margin-bottom: 10px; }
-  .dwp-plan { flex: 1 1 100%; min-width: 100%; }
-  .dwp-plans { flex-direction: column; }
-  .dwp-sub-row { flex-direction: column; align-items: stretch; gap: 10px; }
-  .dwp-prices { min-width: 0; }
-  .dwp-cta { width: 100%; margin-left: 0; }
-  .dwp-start-price { font-size: 14px; }
-  .dwp-title { font-size: 15px; }
-  .dwp-image { max-height: 140px; height: auto; width: 100%; }
-  .dwp-floor { display: none; }
+  .dwp-tabs {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .dwp-plan {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  .dwp-plans {
+    flex-direction: column;
+  }
+  .dwp-sub-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .dwp-prices {
+    min-width: 0;
+  }
+  .dwp-cta {
+    width: 100%;
+    margin-left: 0;
+  }
+  .dwp-start-price {
+    font-size: 14px;
+  }
+  .dwp-title {
+    font-size: 15px;
+  }
+  .dwp-image {
+    max-height: 140px;
+    height: auto;
+    width: 100%;
+  }
+  .dwp-floor {
+    display: none;
+  }
+  .dwp-sub-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .dwp-cta {
+    justify-content: center; /* keep Subscribe centered */
+  }
+
+  .dwp-prices {
+    justify-content: center;
+  }
 }

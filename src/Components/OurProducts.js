@@ -108,12 +108,17 @@ export default function OurProducts() {
 
       <div className="ourproducts-container">
         {productsData.map((product) => (
-          <div key={product.id} className={`product-card product-card-${product.id}`}>
-            <img
-              src={product.img}
-              alt={product.title}
-              className={`product-img product-img-${product.id}`}
-            />
+          <div
+            key={product.id}
+            className={`product-card product-card-${product.id}`}
+          >
+            <div className="product-img-container">
+              <img
+                src={product.img}
+                alt={product.title}
+                className={`product-img product-img-${product.id}`}
+              />
+            </div>
 
             <div className="product-content">
               <h3 className="product-title">{product.title}</h3>

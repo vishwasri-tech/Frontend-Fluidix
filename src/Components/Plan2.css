@@ -3,9 +3,21 @@
   text-align: center;
   padding: 60px 20px;
   background: linear-gradient(135deg, #9c27b0, #2196f3);
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
-
+.plan2-card-container {
+  padding-top: 40px;
+  border-radius: 20px;
+  background-color: #0c4dda;
+  padding-bottom: 10px;
+}
+.most-popular {
+  font-size: larger;
+  margin-bottom: 10px;
+  color: white;
+}
+.plan2-card-full {
+}
 .plan2-title {
   font-size: 28px;
   font-weight: bold;
@@ -62,7 +74,7 @@
   font-size: 14px;
   padding-left: 22px;
   position: relative;
-  line-height: 2.5; 
+  line-height: 2.5;
 }
 
 .plan2-features li::before {
@@ -94,7 +106,7 @@
 /* Basic Plan Button (clickable, light color) */
 .basic-btn {
   background: #e0e0e0; /* light gray */
-  color: #333;          /* dark text */
+  color: #333; /* dark text */
   border: 1px solid #ccc;
   cursor: pointer;
 }
@@ -105,7 +117,8 @@
 
 /* Premium Plan */
 .premium {
-  background: #2563eb;
+  background: #5a8eff;
+  border: none;
   color: white;
 }
 
@@ -125,7 +138,6 @@
 /* Highlight Premium */
 .highlight {
   z-index: 2;
-  border: 3px solid #0d47a1;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   transform: translateY(-6px);
 }

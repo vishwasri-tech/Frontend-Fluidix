@@ -4,15 +4,15 @@ import Main from "./Components/Main";
 import Plans from "./Components/Plans";
 import Mission from "./Components/Mission";
 import Vision from "./Components/Vision";
-import Flow from "./Components/Flow";    
+import Flow from "./Components/Flow";
 import Plan2 from "./Components/Plan2";
 import Feature from "./Components/Feature";
 import Products from "./Components/Products";
 import About from "./Components/About";
 import OurProducts from "./Components/OurProducts";
 import Reason from "./Components/Reason";
-import Bio from "./Components/Bio"; 
-import Enquire from "./Components/Enquire";      
+import Bio from "./Components/Bio";
+import Enquire from "./Components/Enquire";
 import WaterComposition from "./Components/Watercomposition";
 import Custom from "./Components/Custom";
 import HowItWorks from "./Components/HowItWorks";
@@ -25,7 +25,7 @@ import Specification4 from "./Components/Specifications4";
 import Specification3 from "./Components/Specifications3";
 import DynamicWaterProduct from "./Components/DynamicWaterProduct";
 import ContactWhy from "./Components/ContactWhy";
-// Import other specification components as needed  
+// Import other specification components as needed
 
 // Individual Product Pages
 import Product50 from "./Components/Product50";
@@ -36,7 +36,6 @@ import Product1000 from "./Components/Product1000";
 import Product2000 from "./Components/Product2000";
 
 import "./App.css";
-
 
 function App() {
   return (
@@ -75,12 +74,66 @@ function App() {
           />
 
           {/* Individual Product Pages */}
-          <Route path="/product50" element={<><Product50 /><Specifications/><Bio /></>} />
-          <Route path="/product100" element={<><Product100 /><Specifications1/><Bio /></>} />
-          <Route path="/product250" element={<><Product250 /><Specifications2/><Bio /></>} />
-          <Route path="/product500" element={<><Product500 /><Specification3/><Bio /></>} />
-          <Route path="/product1000" element={<><Product1000 /><Specification4/><Bio /></>} />
-          <Route path="/product2000" element={<><Product2000 /><Specification5/><Bio /></>} />
+          <Route
+            path="/product50"
+            element={
+              <>
+                <Product50 />
+                <Specifications />
+                <Bio />
+              </>
+            }
+          />
+          <Route
+            path="/product100"
+            element={
+              <>
+                <Product100 />
+                <Specifications1 />
+                <Bio />
+              </>
+            }
+          />
+          <Route
+            path="/product250"
+            element={
+              <>
+                <Product250 />
+                <Specifications2 />
+                <Bio />
+              </>
+            }
+          />
+          <Route
+            path="/product500"
+            element={
+              <>
+                <Product500 />
+                <Specification3 />
+                <Bio />
+              </>
+            }
+          />
+          <Route
+            path="/product1000"
+            element={
+              <>
+                <Product1000 />
+                <Specification4 />
+                <Bio />
+              </>
+            }
+          />
+          <Route
+            path="/product2000"
+            element={
+              <>
+                <Product2000 />
+                <Specification5 />
+                <Bio />
+              </>
+            }
+          />
 
           {/* About Page */}
           <Route
@@ -99,20 +152,19 @@ function App() {
             path="/custom"
             element={
               <>
-                <Custom/>
-                <HowItWorks/>
-                <Form/>
+                <Custom />
+                <HowItWorks />
+                <Form />
                 <Bio />
-                
               </>
             }
           />
 
           <Route
-            path ="plans"
+            path="plans"
             element={
               <>
-                <DynamicWaterProduct/>
+                <DynamicWaterProduct />
                 <Flow />
                 <Bio />
               </>
@@ -120,18 +172,16 @@ function App() {
           />
 
           {/* Enquire Page */}
-         <Route
-  path="/enquire"
-  element={
-    <>
-      <Enquire />
-      <ContactWhy />
-      <Bio />
-      
-    </>
-  }
-/>
-
+          <Route
+            path="/enquire"
+            element={
+              <>
+                <Enquire />
+                <ContactWhy />
+                <Bio />
+              </>
+            }
+          />
         </Routes>
       </div>
     </Router>
