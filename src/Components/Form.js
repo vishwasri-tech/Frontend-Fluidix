@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // ✅ Import Link
-import './Form.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
+import "./Form.css";
 
 const CustomROForm = () => {
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     mobile: "",
     email: "",
@@ -83,42 +83,88 @@ const CustomROForm = () => {
       <div className="ro-form-container">
         <div className="ro-info-box">
           <h4>
-            Fill Out The Form To Get Your Custom RO Solution.<br />
+            Fill Out The Form To Get Your Custom RO Solution.
+            <br />
             Our Team Will Contact You Shortly.
           </h4>
-          <p><strong>Tailored Water Treatment Plants Above 2000 LPH.</strong></p>
           <p>
-            At Fluidix, we design and deliver large-scale RO systems customized to your exact requirements.
-            Whether for industries, hospitals, or institutions, our solutions ensure efficiency, reliability,
-            and long-term support. Share your details, and let’s build the right setup for you.
+            <strong>Tailored Water Treatment Plants Above 2000 LPH.</strong>
+          </p>
+          <p>
+            At Fluidix, we design and deliver large-scale RO systems customized
+            to your exact requirements. Whether for industries, hospitals, or
+            institutions, our solutions ensure efficiency, reliability, and
+            long-term support. Share your details, and let’s build the right
+            setup for you.
           </p>
         </div>
 
         <div className="ro-form-card">
           <h3>Get Your Custom RO Solution</h3>
           <form className="ro-form" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
             {errors.name && <p className="error">{errors.name}</p>}
 
-            <input type="tel" name="mobile" placeholder="Mobile No" value={formData.mobile} onChange={handleChange} required />
+            <input
+              type="tel"
+              name="mobile"
+              placeholder="Mobile No"
+              value={formData.mobile}
+              onChange={handleChange}
+              required
+            />
             {errors.mobile && <p className="error">{errors.mobile}</p>}
 
-            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
             {errors.email && <p className="error">{errors.email}</p>}
 
-            <input type="text" name="company" placeholder="Company / Organization" value={formData.company} onChange={handleChange}/>
-            <textarea name="location" placeholder="Location / Address" rows="2" value={formData.location} onChange={handleChange}/>
-            
-            <textarea name="message" placeholder="Message" rows="3" value={formData.message} onChange={handleChange}/>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company / Organization"
+              value={formData.company}
+              onChange={handleChange}
+            />
+            <textarea
+              name="location"
+              placeholder="Location / Address"
+              rows="2"
+              value={formData.location}
+              onChange={handleChange}
+            />
+
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="3"
+              value={formData.message}
+              onChange={handleChange}
+            />
             {errors.message && <p className="error">{errors.message}</p>}
-            <button type="submit">Submit</button>
+            <button style={{ width: "150px", padding: "10px" }} type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>
 
       <div className="ro-footer-cta">
         <p>Your clean water journey starts with one Call.</p>
-        
+
         {/* ✅ Navigation to Enquire page */}
         <Link to="/enquire">
           <button>Contact</button>

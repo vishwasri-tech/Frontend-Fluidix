@@ -27,8 +27,8 @@
   line-height: 1.6;
   max-width: 900px;
   margin: 0 auto 30px;
-  color: #08007C;
-  text-align: left;
+  color: #08007c;
+  text-align: center;
 }
 
 /* Mission Section */
@@ -87,13 +87,13 @@
   .mission-section {
     padding: 60px 5%;
   }
-  
+
   .mission-text {
     flex: 1 1 100%;
     max-width: 100%;
     padding: 0 15px;
   }
-  
+
   .mission-image {
     flex: 1 1 100%;
     margin-top: 30px;

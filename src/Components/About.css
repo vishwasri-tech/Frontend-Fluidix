@@ -68,4 +68,7 @@
   .about-content p {
     color: black;
   }
+  .about-fluidix {
+    text-align: left;
+  }
 }
