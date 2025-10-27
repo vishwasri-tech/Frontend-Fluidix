@@ -9,7 +9,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 50px;
-  color: #08007C;
+  color: #08007c;
 }
 
 /* Container - horizontal on wide screens */
@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 70px;             /* more gap between step groups */
+  gap: 70px; /* more gap between step groups */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -26,8 +26,8 @@
 /* group that contains a step and its following arrow */
 .step-group3 {
   display: flex;
-  align-items: center;  
-  gap: 40px;             /* increased gap between step and arrow */
+  align-items: center;
+  gap: 40px; /* increased gap between step and arrow */
 }
 
 /* single step block (icon + title) */
@@ -42,12 +42,12 @@
 
 /* icon and title */
 .step-icon {
-  width: 140px;          /* increased icon size */
+  width: 140px; /* increased icon size */
   height: 140px;
   object-fit: contain;
   margin-bottom: 12px;
-  background: none;      /* remove any background */
-  display: block;        /* ensure image is fully visible */
+  background: none; /* remove any background */
+  display: block; /* ensure image is fully visible */
 }
 
 .step-title3 {
@@ -60,7 +60,7 @@
 
 /* Arrow - centered vertically */
 .arrow3 {
-  font-size: 3rem;       
+  font-size: 3rem;
   font-weight: 500;
   color: #a49fe9;
   display: inline-flex;
@@ -70,16 +70,32 @@
   line-height: 1;
 }
 
+.step-icon {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.step-icon {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: contain !important;
+  margin-bottom: 12px;
+  background: none !important;
+  display: block;
+}
+
 /* Responsive: stack vertically and rotate arrow down */
 @media (max-width: 768px) {
   .steps-container3 {
     flex-direction: column;
-    gap: 45px;          /* increased gap for mobile */
+    gap: 45px; /* increased gap for mobile */
   }
 
   .step-group3 {
     flex-direction: column;
-    gap: 18px;          /* arrow spacing on mobile */
+    gap: 18px; /* arrow spacing on mobile */
     align-items: center;
   }
 
@@ -102,8 +118,18 @@
 
 /* Very small screens: tighten spacing */
 @media (max-width: 400px) {
-  .section-title3 { font-size: 24px; margin-bottom: 24px; }
-  .step-icon { width: 100px; height: 100px; }
-  .arrow3 { font-size: 1.6rem; }
-  .step-title3 { font-size: 14px; }
+  .section-title3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .step-icon {
+    width: 100px;
+    height: 100px;
+  }
+  .arrow3 {
+    font-size: 1.6rem;
+  }
+  .step-title3 {
+    font-size: 14px;
+  }
 }

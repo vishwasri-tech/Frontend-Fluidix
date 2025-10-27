@@ -5,7 +5,6 @@ export default function Plan2() {
   const navigate = useNavigate();
   const handleSelectPlan = (plan) => {
     navigate("/plans");
-
   };
   return (
     <div className="plan2-container">
@@ -33,8 +32,7 @@ export default function Plan2() {
           </div>
         </div>
 
- <div className="plan2-card-container">
-
+        <div className="plan2-card-container">
           <h1 className="most-popular">MOST POPULAR</h1>
           <div className="plan2-card premium highlight">
             {/* <div className="plan2-badge">MOST POPULAR</div> */}
@@ -60,5 +58,3 @@ export default function Plan2() {
     </div>
   );
 }
-
-

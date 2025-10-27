@@ -24,7 +24,7 @@
 .ourproducts-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 40px;
   justify-content: center;
   align-items: start;
   margin: 0 auto;

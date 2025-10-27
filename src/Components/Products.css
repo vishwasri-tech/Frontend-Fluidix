@@ -24,7 +24,13 @@
   padding-right: 10%;
   box-sizing: border-box;
   pointer-events: none;
+
   /* Fix: prevent clicks on inactive slides */
+  /* NEWW */
+
+  background-position: center center;
+  /* background-size: contain */ /* was cover */
+  background-repeat: no-repeat;
 }
 
 .product-background.active {
@@ -134,19 +140,6 @@
     font-size: 28px;
   }
   .hero-text-overlay p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-text-overlay h1 {
-    font-size: 24px;
-  }
-  .hero-text-overlay p {
-    font-size: 13px;
-  }
-  .know-more-btn {
-    padding: 12px 24px;
     font-size: 14px;
   }
 }
